@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Quando foi realizada a última revisão de identificação dos ativos?",
+    "type": "date",
+    "vrf": 0
+  },
+  {
+    "title": "A organização possui todos os ativos de alto, médio e baixo impacto da rede elétrica mapeados?",
+    "type": "radio",
+    "vrf": 0,
+    "alternatives": [
+      {
+        "label": "Sim",
+        "value": 1
+      },
+      {
+        "label": "Não",
+        "value": 0
+      }
+    ]
+  }
+]
