@@ -1,11 +1,18 @@
-import React from 'react';
+import { Typography } from '@mui/material'
 
-// import { Container } from './styles';
+import { Wrap, Container, Content, StartButton } from 'src/styles/pages/home'
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
-    
-  );
+    <Wrap>
+      <Container>
+        <Content>
+          <Typography variant="h1">PRANC</Typography>
+          <StartButton href="/questions">Iniciar</StartButton>
+        </Content>
+      </Container>
+    </Wrap>
+  )
 }
 
-export default Home;
+export default Home
