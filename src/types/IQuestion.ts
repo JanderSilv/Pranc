@@ -1,16 +1,14 @@
-import { ApplicabeSystem, QuestionType } from "./enums";
-import IResponse from "./IResponse";
+import { ApplicableSystem, QuestionType } from './enums'
+import IAlternative from './IAlternative'
 
-interface IQuestion{
-    id: number;
-    title: string;
-    text: string;
-    type: QuestionType;
-    applicabeSystem: ApplicabeSystem;
-    responses: IResponse[];
-    evaluate : (response: IResponse[])=> number;
+interface IQuestion {
+  id: number
+  title: string
+  helper?: string
+  type: QuestionType
+  applicableSystem?: ApplicableSystem
+  alternatives?: IAlternative[]
+  evaluate: (alternative: IAlternative[]) => number
 }
 
-
-
-export default IQuestion;
+export default IQuestion

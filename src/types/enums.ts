@@ -1,28 +1,28 @@
 export enum VRF {
-    low = 0,
-    medium,
-    high,
-    none
+  low = 0,
+  medium,
+  high,
+  none,
 }
 
 export enum VSL {
-    lower = 0,
-    moderate,
-    high,
-    severe,
-    none
+  lower = 0,
+  moderate,
+  high,
+  severe,
+  none,
 }
 
-export enum ApplicabeSystem{
-    lowImpact = 0,
-    mediumImpact,
-    HighImpact,
-    none
+export enum ApplicableSystem {
+  lowImpact = 0,
+  mediumImpact,
+  HighImpact,
+  none,
 }
 
-export enum QuestionType{
-    single,
-    multiple,
-    date,
-    number
+export enum QuestionType {
+  single = 'radio',
+  multiple = 'checkbox',
+  date = 'date',
+  number = 'number',
 }

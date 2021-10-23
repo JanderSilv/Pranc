@@ -1,37 +1,45 @@
 [
   {
+    "id": 0,
     "title": "Qual os níveis de impacto presentes na BES?",
     "type": "checkbox",
     "alternatives": [
       {
+        "id": 0,
         "label": "Baixo",
         "value": 0
       },
       {
+        "id": 1,
         "label": "Médio",
         "value": 1
       },
       {
+        "id": 2,
         "label": "Alto",
         "value": 2
       }
     ]
   },
   {
+    "id": 1,
     "title": "A organização possui um Gerente CIP Senior?",
     "type": "radio",
     "alternatives": [
       {
+        "id": 0,
         "label": "Sim",
         "value": 1
       },
       {
+        "id": 1,
         "label": "Não",
         "value": 0
       }
     ]
   },
   {
+    "id": 2,
     "title": "Quando foi realizada a última auditoria?",
     "type": "date"
   }
