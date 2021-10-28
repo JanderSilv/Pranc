@@ -1,11 +1,13 @@
-import * as React from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
-import 'src/styles/globals.css'
+import AdapterDateFns from '@mui/lab/AdapterDateFns'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import ptBRLocale from 'date-fns/locale/pt-BR'
 
+import 'src/styles/globals.css'
 import theme from 'src/styles/theme'
 import createEmotionCache from 'src/createEmotionCache'
 
@@ -25,8 +27,10 @@ export default function MyApp(props: MyAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
+        <LocalizationProvider dateAdapter={AdapterDateFns} locale={ptBRLocale}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </LocalizationProvider>
       </ThemeProvider>
     </CacheProvider>
   )
