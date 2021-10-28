@@ -4,7 +4,7 @@ import LinkButton from 'src/components/LinkButton'
 export const Wrap = styled('main')(({ theme: { palette } }) => ({
   width: '100vw',
   minHeight: '100vh',
-  background: `linear-gradient(121deg, ${palette.primary.main} 0%, ${palette.primary.dark} 100%)`,
+  background: palette.gradient,
 
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(300px, auto));',
@@ -33,7 +33,7 @@ export const Container = styled('section')({
   zIndex: 10,
 })
 
-export const Content = styled('section')(({ theme: { palette } }) => ({
+export const Content = styled('div')(({ theme: { palette } }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
