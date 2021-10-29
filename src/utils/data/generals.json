@@ -41,6 +41,13 @@
   {
     "id": 2,
     "title": "Quando foi realizada a última auditoria?",
-    "type": "date"
+    "type": "date",
+    "alternatives": [
+      {
+        "id": 0,
+        "label": "Não houve auditoria",
+        "value": 0
+      }
+    ]
   }
 ]
