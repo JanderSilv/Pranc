@@ -1,7 +1,7 @@
-import CIP from './CIP'
-import { VRF } from './enums'
-import IAlternative from './IAlternative'
-import IQuestion, { IFuncTable, IQuestionEvaluate } from './IQuestion'
+import CIP from '../types/CIP'
+import { VRF } from '../types/enums'
+import IAlternative from '../types/IAlternative'
+import IQuestion, { IFuncTable, IQuestionEvaluate } from '../types/IQuestion'
 import {addMonths, differenceInDays, differenceInMonths} from 'date-fns'
 
 const evaluateYN = (question:IQuestion,alternatives: IAlternative[]):number =>{
