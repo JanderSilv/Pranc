@@ -1,28 +1,15 @@
 import { styled } from '@mui/material'
 import LinkButton from 'src/components/LinkButton'
 
-export const Wrap = styled('main')(({ theme: { palette } }) => ({
-  width: '100vw',
-  minHeight: '100vh',
-  background: palette.gradient,
+export const Header = styled('header')(({ theme: { palette, spacing } }) => ({
+  padding: spacing(4),
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, auto));',
-
-  '&:before': {
-    content: '""',
-    width: '100%',
-    minHeight: '100vh',
-    background:
-      '100% bottom /contain no-repeat url(assets/images/high-voltage.png)',
-    opacity: 0.5,
-    display: 'block',
-    position: 'absolute',
-  },
-
-  '&:after': {
-    content: '""',
-    display: 'block',
+  '& > span': {
+    color: palette.primary.contrastText,
+    fontSize: '2.5rem',
   },
 }))
 
@@ -33,7 +20,7 @@ export const Container = styled('section')({
   zIndex: 10,
 })
 
-export const Content = styled('div')(({ theme: { palette } }) => ({
+export const Content = styled('section')(({ theme: { palette } }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

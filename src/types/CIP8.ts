@@ -1,9 +1,9 @@
 import CIP from './CIP'
 import { VRF } from './enums'
 import IAlternative from './IAlternative'
-import { IFuncTable, IQuestionEvaluate } from './IQuestion'
+import IQuestion, { IFuncTable, IQuestionEvaluate } from './IQuestion'
 
-const calculoPadrao = (alternatives: IAlternative[]) => {
+const calculoPadrao = (question:IQuestion,alternatives: IAlternative[]) => {
   let val: number = 0
   alternatives.forEach(a => {
     if (a.id == 0 && a.value == false) {

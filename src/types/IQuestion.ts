@@ -2,7 +2,7 @@ import { ApplicableSystem, QuestionType } from './enums'
 import IAlternative from './IAlternative'
 
 export interface IQuestionEvaluate {
-  (alternatives: IAlternative[]): number
+  (question:IQuestion,alternatives: IAlternative[]): number
 }
 
 export type IFuncTable = {

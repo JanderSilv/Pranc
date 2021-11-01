@@ -16,6 +16,8 @@ class CIP implements IEvaluate {
     return result
   }
 
+  getQuestions = ()=> this.#questions;
+
   constructor(id: number, funcs: IFuncTable) {
     this.#id = id
     this.#funcs = funcs
