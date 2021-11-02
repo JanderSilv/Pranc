@@ -5,7 +5,7 @@ import Question from './Question'
 
 class CIP implements IEvaluate {
   #id: number
-  #questions: Question[]
+  #questions: Question[] = []
   #funcs: IFuncTable
 
   evaluate = () => {
@@ -21,9 +21,11 @@ class CIP implements IEvaluate {
   constructor(id: number, funcs: IFuncTable) {
     this.#id = id
     this.#funcs = funcs
-    const rawQuestions: IQuestion[] = JSON.parse(
-      `src/utils/data/cip-${id}.json`
-    ) as IQuestion[]
+  }
+
+  loadQuestions = async ()=>{
+    const response = await import(`src/utils/data/cip-${this.#id}.json`);
+    const rawQuestions: IQuestion[] = JSON.parse(response.default) as IQuestion[]
     this.#questions = rawQuestions.map(rq => new Question(rq, this.#funcs))
   }
 
