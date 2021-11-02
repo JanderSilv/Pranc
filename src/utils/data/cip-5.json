@@ -3,7 +3,7 @@
     "id": 0,
     "title": "Quando foi realizado o último reforço da documentação e implantação de boas práticas de segurança com os colaboradores?",
     "helper": "Caso não tenha sido realizado, deixe em branco",
-    "type": "date-null",
+    "type": "date",
     "vrf": 0
   },
   {

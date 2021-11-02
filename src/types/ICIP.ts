@@ -1,9 +1,8 @@
 import IQuestion from './IQuestion'
 
-interface CIP {
+interface ICIP {
   id: number
   questions: IQuestion[]
-  evaluate: (response: IQuestion[]) => number
 }
 
-export default CIP
+export default ICIP
