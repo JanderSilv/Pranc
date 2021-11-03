@@ -2,7 +2,8 @@ import { styled } from '@mui/material'
 import LinkButton from 'src/components/LinkButton'
 
 export const Wrap = styled('main')(({ theme: { palette } }) => ({
-  width: '100vw',
+  width: '100%',
+  maxWidth: '100vw',
   minHeight: '100vh',
   background: palette.gradient,
 }))
@@ -20,6 +21,7 @@ export const Container = styled('section')(
 
 export const Content = styled('div')(({ theme: { palette, spacing } }) => ({
   width: 'max-content',
+  maxWidth: 960,
   marginTop: spacing(4),
   marginInline: 'auto',
 

@@ -1,8 +1,6 @@
 import { Button, Typography } from '@mui/material'
-import generals from 'src/utils/data/generals.json'
-import IQuestion from 'src/types/IQuestion'
-
-import { Header, CategoriesDrawer, Question } from 'src/components'
+import useCIP from 'src/hooks/useCIP'
+import { Header, CategoriesDrawer, QuestionComponent } from 'src/components'
 import {
   ButtonsContainer,
   Container,
@@ -10,22 +8,22 @@ import {
   Wrap,
 } from 'src/styles/pages/questions'
 
-export type OmittedIQuestion = Omit<IQuestion, 'evaluate'>
+const CIPS = () => {
+  const { cip } = useCIP()
 
-const Generals = () => {
   return (
     <Wrap>
       <Header />
       <Container>
-        <Typography variant="h2">Características Gerais</Typography>
+        <Typography variant="h2">{cip?.title}</Typography>
         <Content>
           <ul>
-            {(generals as OmittedIQuestion[]).map((general, index) => (
-              <li key={general.title}>
+            {cip?.questions.map((question, index) => (
+              <li key={question.title}>
                 <Typography variant="h3">
-                  {`${index + 1}. ${general.title}`}
+                  {`${index + 1}. ${question.title}`}
                 </Typography>
-                <Question {...general} />,
+                <QuestionComponent {...question} />
               </li>
             ))}
           </ul>
@@ -41,4 +39,4 @@ const Generals = () => {
   )
 }
 
-export default Generals
+export default CIPS

@@ -5,14 +5,14 @@
     "helper": "Caso não tenha sido realizado, deixe em branco",
     "type": "date",
     "vrf": 0,
-    "alternatives":[
+    "alternatives": [
       {
-        "id":0,
+        "id": 0,
         "label": "Data",
-        "value": "undefined"
+        "value": null
       },
       {
-        "id":1,
+        "id": 1,
         "label": "Nunca",
         "value": false
       }

@@ -22,6 +22,7 @@ export enum ApplicableSystem {
 
 export enum QuestionType {
   single = 'radio',
+  yesNo = 'yes-no',
   multiple = 'checkbox',
   date = 'date',
   number = 'number',

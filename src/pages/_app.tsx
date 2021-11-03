@@ -7,6 +7,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import ptBRLocale from 'date-fns/locale/pt-BR'
 
+import CipsProvider from 'src/contexts/cips'
 import 'src/styles/globals.css'
 import theme from 'src/styles/theme'
 import createEmotionCache from 'src/createEmotionCache'
@@ -29,7 +30,9 @@ export default function MyApp(props: MyAppProps) {
       <ThemeProvider theme={theme}>
         <LocalizationProvider dateAdapter={AdapterDateFns} locale={ptBRLocale}>
           <CssBaseline />
-          <Component {...pageProps} />
+          <CipsProvider>
+            <Component {...pageProps} />
+          </CipsProvider>
         </LocalizationProvider>
       </ThemeProvider>
     </CacheProvider>

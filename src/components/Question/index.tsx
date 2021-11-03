@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import {
   Box,
   Checkbox,
@@ -11,11 +11,10 @@ import {
 } from '@mui/material'
 import { SxProps } from '@mui/system'
 import DatePicker from '@mui/lab/DatePicker'
-
 import { QuestionType } from 'src/types/enums'
-import { OmittedIQuestion } from 'src/pages/questions'
+import { Question } from 'src/types'
 
-type Props = OmittedIQuestion
+type Props = Question
 
 const formStyles: SxProps = { mt: 2, marginInline: 3 }
 const formDateStyle: SxProps = {
@@ -51,12 +50,34 @@ const RadioQuestion = (props: Props) => {
   )
 }
 
+const YesNoQuestion = (props: Props) => {
+  const { alternatives } = props
+
+  const [value, setValue] = useState(alternatives)
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue([
+      {
+        ...alternatives[0],
+        value: event.target.value === 'true',
+      },
+    ])
+  }
+
+  return (
+    <FormControl sx={formStyles} component="fieldset">
+      <RadioGroup value={value[0].value} onChange={handleChange}>
+        <FormControlLabel value={true} control={<Radio />} label="Sim" />
+        <FormControlLabel value={false} control={<Radio />} label="Não" />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
 const CheckBoxQuestion = (props: Props) => {
   const { alternatives } = props
 
   const [state, setState] = useState<Record<number, true>>({})
-
-  Object.keys(state)
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>, id: number) => {
     let auxState = { ...state }
@@ -90,37 +111,55 @@ const CheckBoxQuestion = (props: Props) => {
 
 const DateQuestion = (props: Props) => {
   const { alternatives } = props
-  const [value, setValue] = useState<Date | number | null>(null)
+  const [values, setValues] = useState(alternatives)
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(Number((event.target as HTMLInputElement).value))
+  const handleChange = (event: ChangeEvent<HTMLInputElement>, id: number) => {
+    const auxValues = [...alternatives]
+    auxValues.splice(1, 1, {
+      ...auxValues[1],
+      value: event.target.checked,
+    })
+    setValues(auxValues)
   }
 
   return (
     <Box sx={formDateStyle}>
       <DatePicker
         label="Data"
-        value={value}
+        value={values[0].value}
         clearText="Limpar"
         onChange={newValue => {
-          setValue(newValue)
+          const auxValues = [...alternatives]
+          auxValues.splice(0, 1, {
+            ...auxValues[0],
+            value: newValue,
+          })
+          setValues(auxValues)
         }}
         renderInput={params => <TextField {...params} />}
         clearable
         disableFuture
       />
 
-      <FormControl sx={{ mt: 2 }} component="fieldset">
-        <RadioGroup value={value} onChange={handleChange}>
-          {alternatives?.map(({ id, label }) => (
-            <FormControlLabel
-              key={id}
-              value={id}
-              control={<Radio />}
-              label={label}
-            />
-          ))}
-        </RadioGroup>
+      <FormControl sx={{ mt: 2 }} component="fieldset" variant="standard">
+        <FormGroup>
+          {values?.map(({ id, label, value }, index) => {
+            if (id === 0) return null
+            return (
+              <FormControlLabel
+                key={id}
+                control={
+                  <Checkbox
+                    checked={value}
+                    onChange={event => handleChange(event, id)}
+                    name={label}
+                  />
+                }
+                label={label}
+              />
+            )
+          })}
+        </FormGroup>
       </FormControl>
     </Box>
   )
@@ -129,6 +168,7 @@ const DateQuestion = (props: Props) => {
 const chooseComponent = (type: QuestionType) => {
   const components = {
     [QuestionType.single]: RadioQuestion,
+    [QuestionType.yesNo]: YesNoQuestion,
     [QuestionType.multiple]: CheckBoxQuestion,
     [QuestionType.date]: DateQuestion,
     [QuestionType.number]: CheckBoxQuestion,
@@ -137,11 +177,11 @@ const chooseComponent = (type: QuestionType) => {
   return components[type]
 }
 
-const Question = (props: Props) => {
+const QuestionComponent = (props: Props) => {
   const { type } = props
 
   const Component = chooseComponent(type)
   return <Component {...props} />
 }
 
-export default Question
+export default QuestionComponent
