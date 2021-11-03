@@ -1,4 +1,4 @@
-import CIP from '../types/CIP'
+import {evaluateQuestions, loadQuestions} from '../types/CIP'
 import { VRF } from '../types/enums'
 import IAlternative from '../types/IAlternative'
 import IQuestion, { IFuncTable, IQuestionEvaluate } from '../types/IQuestion'
@@ -40,22 +40,7 @@ const cip4funcs : IFuncTable = [
     }
 ]
 
-class CIP4 extends CIP{
-    constructor() {
-        super(4, cip4funcs)
-      }
-}
+const cip4 = async () => await loadQuestions(4,cip4funcs);
 
-// const obj = new CIP4();
+export default cip4;
 
-// //jandinho pega as questoes
-// const questions =  obj.getQuestions();
-
-// //renderiza 
-// //{...}
-// //pega as resposta
-
-// obj.updateState(/* e bota aqui */questions);
-
-// //e pega as nota
-// const nota = obj.evaluate();
