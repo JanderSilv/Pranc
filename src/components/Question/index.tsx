@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, memo, useState } from 'react'
 import {
   Box,
   Checkbox,
@@ -12,9 +12,12 @@ import {
 import { SxProps } from '@mui/system'
 import DatePicker from '@mui/lab/DatePicker'
 import { QuestionType } from 'src/types/enums'
-import { Question } from 'src/types'
+import { Question, IAlternative } from 'src/types'
 
-type Props = Question
+type Props = Question & {
+  initialAlternatives?: IAlternative[]
+  updateQuestions: (questionId: number, newAlternatives: IAlternative[]) => void
+}
 
 const formStyles: SxProps = { mt: 2, marginInline: 3 }
 const formDateStyle: SxProps = {
@@ -51,22 +54,21 @@ const RadioQuestion = (props: Props) => {
 }
 
 const YesNoQuestion = (props: Props) => {
-  const { alternatives } = props
-
-  const [value, setValue] = useState(alternatives)
+  const { id, alternatives, updateQuestions } = props
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue([
+    const newAlternatives = [
       {
         ...alternatives[0],
         value: event.target.value === 'true',
       },
-    ])
+    ]
+    updateQuestions(id, newAlternatives)
   }
 
   return (
     <FormControl sx={formStyles} component="fieldset">
-      <RadioGroup value={value[0].value} onChange={handleChange}>
+      <RadioGroup value={alternatives[0].value} onChange={handleChange}>
         <FormControlLabel value={true} control={<Radio />} label="Sim" />
         <FormControlLabel value={false} control={<Radio />} label="Não" />
       </RadioGroup>
@@ -110,32 +112,37 @@ const CheckBoxQuestion = (props: Props) => {
 }
 
 const DateQuestion = (props: Props) => {
-  const { alternatives } = props
-  const [values, setValues] = useState(alternatives)
+  const { id, alternatives, initialAlternatives, updateQuestions } = props
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>, id: number) => {
-    const auxValues = [...alternatives]
-    auxValues.splice(1, 1, {
-      ...auxValues[1],
-      value: event.target.checked,
-    })
-    setValues(auxValues)
+  const handleChangeCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
+    if (initialAlternatives) {
+      let newAlternatives = [...initialAlternatives]
+      newAlternatives[1] = {
+        ...alternatives[1],
+        value: event.target.checked,
+      }
+      updateQuestions(id, newAlternatives)
+    }
+  }
+
+  const handleChangeDate = (newValue: Date | null) => {
+    if (initialAlternatives) {
+      const newAlternatives = [...initialAlternatives]
+      newAlternatives[0] = {
+        ...alternatives[0],
+        value: newValue,
+      }
+      updateQuestions(id, newAlternatives)
+    }
   }
 
   return (
     <Box sx={formDateStyle}>
       <DatePicker
         label="Data"
-        value={values[0].value}
+        value={alternatives[0].value}
         clearText="Limpar"
-        onChange={newValue => {
-          const auxValues = [...alternatives]
-          auxValues.splice(0, 1, {
-            ...auxValues[0],
-            value: newValue,
-          })
-          setValues(auxValues)
-        }}
+        onChange={handleChangeDate}
         renderInput={params => <TextField {...params} />}
         clearable
         disableFuture
@@ -143,7 +150,7 @@ const DateQuestion = (props: Props) => {
 
       <FormControl sx={{ mt: 2 }} component="fieldset" variant="standard">
         <FormGroup>
-          {values?.map(({ id, label, value }, index) => {
+          {alternatives?.map(({ id, label, value }) => {
             if (id === 0) return null
             return (
               <FormControlLabel
@@ -151,7 +158,7 @@ const DateQuestion = (props: Props) => {
                 control={
                   <Checkbox
                     checked={value}
-                    onChange={event => handleChange(event, id)}
+                    onChange={event => handleChangeCheckbox(event)}
                     name={label}
                   />
                 }
@@ -184,4 +191,4 @@ const QuestionComponent = (props: Props) => {
   return <Component {...props} />
 }
 
-export default QuestionComponent
+export default memo(QuestionComponent)

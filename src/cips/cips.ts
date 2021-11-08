@@ -8,3 +8,5 @@ export const makeCIPS = () => [
     path: 'CIP4',
   },
 ]
+
+export const cipsLength = makeCIPS().length

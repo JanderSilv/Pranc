@@ -22,7 +22,6 @@ export const Container = styled('section')(
 export const Content = styled('div')(({ theme: { palette, spacing } }) => ({
   width: 'max-content',
   maxWidth: 960,
-  marginTop: spacing(4),
   marginInline: 'auto',
 
   display: 'flex',

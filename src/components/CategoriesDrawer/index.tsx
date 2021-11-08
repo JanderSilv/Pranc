@@ -1,4 +1,4 @@
-import { useState, KeyboardEvent, MouseEvent } from 'react'
+import { useState, KeyboardEvent, MouseEvent, memo } from 'react'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import Button from '@mui/material/Button'
@@ -65,4 +65,4 @@ const CategoriesDrawer = () => {
   )
 }
 
-export default CategoriesDrawer
+export default memo(CategoriesDrawer)
