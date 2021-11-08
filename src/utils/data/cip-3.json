@@ -2,31 +2,59 @@
   {
     "id": 0,
     "title": "A organização tem documentado e implementado políticas de cibersegurança para os cyber ativos?",
-    "type": "radio",
+    "type": "yes-no",
     "vrf": 1,
     "alternatives": [
       {
         "id": 0,
-        "label": "Sim",
-        "value": 1
-      },
-      {
-        "id": 1,
-        "label": "Não",
-        "value": 0
+        "label": "yes-no",
+        "value": null
       }
+    ],
+    "solutions": [
+      "Cada um dos ativos deve ser documentado com politicas que indiquem medidas de proteção a esses ativos."
     ],
     "subQuestion": {
       "id": 1,
       "title": "Quando foi realizada a última revisão dessas políticas",
       "type": "date",
-      "vrf": 1
+      "vrf": 1,
+      "alternatives": [
+        {
+          "id": 0,
+          "label": "data",
+          "value": null
+        },
+        {
+          "id": 1,
+          "label": "Nunca foi realizado",
+          "value": false
+        }
+      ],
+      "solutions": [
+        "A revisão das politicas deve ser realizada a cada 15 meses."
+      ]
     }
   },
   {
     "id": 2,
-    "title": "Última vez que o Gerente CIP foi atualizado nas mudanças realizadas na organização?",
+    "title": "Última vez que o Gerente CIP foi atualizado das mudanças realizadas na organização?",
     "type": "date",
-    "vrf": 1
+    "vrf": 1,
+    "alternatives": [
+      {
+        "id": 0,
+        "label": "data",
+        "value": null
+      },
+      {
+        "id": 1,
+        "label": "Nunca foi avisado",
+        "value": false
+      }
+    ],
+    "solutions": [
+      "O gerente precisa estar ciente para realizar a aprovação e devida documentação das mudanças planejadas ou realizadas na planta."
+    ]
   }
 ]

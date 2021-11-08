@@ -15,7 +15,8 @@
         "label": "Nunca foi realizado",
         "value": false
       }
-    ]
+    ],
+    "solutions": ["A revisão dos ativos deve ser realizada a cada 15 meses."]
   },
   {
     "id": 1,
@@ -28,6 +29,9 @@
         "label": "yes-no",
         "value": null
       }
+    ],
+    "solutions": [
+      "Importante que todos os ativos sejam mapeados, a fim de implementar politicas de segurança e mitigar riscos."
     ]
   }
 ]

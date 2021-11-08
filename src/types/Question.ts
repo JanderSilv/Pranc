@@ -10,6 +10,7 @@ class Question implements IQuestion, IEvaluate {
   type: QuestionType
   applicableSystem?: ApplicableSystem | undefined
   alternatives: IAlternative[]
+  solutions: string[]
   evaluateFunc: IQuestionEvaluate
 
   constructor(data: IQuestion, funcs: IFuncTable) {
@@ -19,10 +20,10 @@ class Question implements IQuestion, IEvaluate {
     this.type = data.type
     this.applicableSystem = data.applicableSystem
     this.alternatives = data.alternatives
-
+    this.solutions = data.solutions
     this.evaluateFunc = funcs.find(func => func.keys.includes(this.id))!.func
   }
-  evaluate = () => this.evaluateFunc(this,this.alternatives)
+  evaluate = () => this.evaluateFunc(this, this.alternatives)
 }
 
 export default Question

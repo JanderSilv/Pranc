@@ -20,7 +20,7 @@ export const Container = styled('section')(
 )
 
 export const Content = styled('div')(({ theme: { palette, spacing } }) => ({
-  width: 'max-content',
+  width: '100%',
   maxWidth: 960,
   marginInline: 'auto',
 
