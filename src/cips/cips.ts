@@ -4,6 +4,10 @@ export const makeCIPS = () => [
     path: 'CIP2',
   },
   {
+    title: 'CIP-003',
+    path: 'CIP3',
+  },
+  {
     title: 'CIP-004',
     path: 'CIP4',
   },

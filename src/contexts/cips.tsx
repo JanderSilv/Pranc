@@ -57,7 +57,12 @@ const CipsProvider: React.FC = ({ children }) => {
     [currentCIPIndex]
   )
   const addScore = useCallback(
-    (score: Score) => setScores(prevScores => [...prevScores, score]),
+    (score: Score) =>
+      setScores(prevScores => {
+        let newScores = [...prevScores]
+        newScores[currentCIPIndex] = score
+        return newScores
+      }),
     []
   )
 

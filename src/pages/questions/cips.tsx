@@ -91,9 +91,7 @@ const CIPS = () => {
                 </Typography>
                 <QuestionComponent
                   updateQuestions={updateQuestions}
-                  initialAlternatives={
-                    cip?.questions[question.id]?.alternatives
-                  }
+                  initialAlternatives={cip?.questions[index]?.alternatives}
                   {...question}
                 />
               </li>

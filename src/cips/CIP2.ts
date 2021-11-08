@@ -1,6 +1,6 @@
 import IAlternative from '../types/IAlternative'
 import IQuestion, { IFuncTable } from '../types/IQuestion'
-import { addMonths, differenceInDays, differenceInMonths } from 'date-fns'
+import { addMonths, differenceInMonths } from 'date-fns'
 import { loadQuestions } from 'src/types/CIP'
 
 const evaluateYN = (
