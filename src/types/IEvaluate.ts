@@ -1,3 +1,5 @@
+import { IAlternative } from '.'
+
 export interface IEvaluate {
-  evaluate: () => number
+  evaluate: (alternatives: IAlternative[]) => number
 }

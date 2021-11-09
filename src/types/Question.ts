@@ -23,7 +23,8 @@ class Question implements IQuestion, IEvaluate {
     this.solutions = data.solutions
     this.evaluateFunc = funcs.find(func => func.keys.includes(this.id))!.func
   }
-  evaluate = () => this.evaluateFunc(this, this.alternatives)
+  evaluate = (alternatives: IAlternative[]) =>
+    this.evaluateFunc(this, alternatives)
 }
 
 export default Question

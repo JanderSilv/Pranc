@@ -63,7 +63,7 @@ const CipsProvider: React.FC = ({ children }) => {
         newScores[currentCIPIndex] = score
         return newScores
       }),
-    []
+    [currentCIPIndex]
   )
 
   useEffect(() => {

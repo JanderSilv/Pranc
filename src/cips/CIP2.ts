@@ -15,15 +15,15 @@ const evaluateAssetsIdentification = (
   question: IQuestion,
   alternatives: IAlternative[]
 ): number => {
-  if (alternatives[0].value == true || alternatives[1].value == 1) return 10
+  if (alternatives[1].value == 1) return 10
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()
 
-  const diff = differenceInMonths(lastUpdate, now)
+  const diff = differenceInMonths(now, lastUpdate)
 
   if (diff <= 15) return 0
   const limit = addMonths(lastUpdate, 15)
-  const limitDiff = differenceInMonths(limit, now)
+  const limitDiff = differenceInMonths(now, limit)
 
   if (limitDiff <= 1) return 3
   if (limitDiff <= 2) return 5

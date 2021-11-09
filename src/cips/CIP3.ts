@@ -19,11 +19,11 @@ const evaluateManagerCIP = (
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()
 
-  const diff = differenceInDays(lastUpdate, now)
+  const diff = differenceInDays(now, lastUpdate)
 
   if (diff <= 30) return 0
   const limit = addMonths(lastUpdate, 30)
-  const limitDiff = differenceInMonths(limit, now)
+  const limitDiff = differenceInMonths(now, limit)
 
   if (limitDiff <= 10) return 3
   if (limitDiff <= 20) return 5

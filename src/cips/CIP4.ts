@@ -19,7 +19,7 @@ const evaluateLastGoodPraticesUpdate = (
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()
 
-  const diffm = differenceInMonths(lastUpdate, now)
+  const diffm = differenceInMonths(now, lastUpdate)
 
   if (diffm <= 3) return 0
   const aux = addMonths(lastUpdate, 3)

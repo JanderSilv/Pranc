@@ -26,7 +26,7 @@ export const evaluateQuestions = (
 ): Score => {
   let totalScore = 0
   const questionsScores = questions.map(question => {
-    const score = question.evaluate()
+    const score = question.evaluate(question.alternatives)
     totalScore += score
     return {
       id: question.id,
