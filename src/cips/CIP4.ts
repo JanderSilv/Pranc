@@ -11,7 +11,7 @@ const evaluateYN = (
   return resp.value == 1 || resp.value == true ? 0 : 5
 }
 
-const evaluateLastGoodPraticesUpdate = (
+const evaluateLastGoodPracticesUpdate = (
   question: IQuestion,
   alternatives: IAlternative[]
 ): number => {
@@ -19,24 +19,21 @@ const evaluateLastGoodPraticesUpdate = (
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()
 
-  const diffm = differenceInMonths(now, lastUpdate)
+  const diff = differenceInMonths(now, lastUpdate)
 
-  if (diffm <= 3) return 0
-  const aux = addMonths(lastUpdate, 3)
-  const diffd = differenceInDays(aux, now)
-  if (diffd < 10) {
-    return 3
-  } else if (diffd < 30) {
-    return 5
-  } else {
-    return 8
-  }
+  if (diff <= 3) return 0
+  const limit = addMonths(lastUpdate, 3)
+  const limitDiff = differenceInDays(now, limit)
+
+  if (limitDiff < 10) return 3
+  if (limitDiff < 30) return 5
+  return 8
 }
 
 const cip4funcs: IFuncTable = [
   {
     keys: [0],
-    func: evaluateLastGoodPraticesUpdate,
+    func: evaluateLastGoodPracticesUpdate,
   },
   {
     keys: [1, 2],

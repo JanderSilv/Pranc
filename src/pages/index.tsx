@@ -8,7 +8,7 @@ const Home = () => {
       <Container>
         <Content>
           <Typography variant="h1">PRANC</Typography>
-          <StartButton href="/questions">Iniciar</StartButton>
+          <StartButton href="/questions/cips">Iniciar</StartButton>
         </Content>
       </Container>
     </Wrap>
