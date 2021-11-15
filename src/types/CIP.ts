@@ -7,6 +7,7 @@ export interface Score {
     id: number
     title: string
     score: number
+    solutions: string[]
   }[]
   totalScore: number
 }

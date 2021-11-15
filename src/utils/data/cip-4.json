@@ -39,7 +39,7 @@
   {
     "id": 2,
     "title": "A organização possui documentado e implementado um planejamento para revogar o acesso físico e remoto de um colaborador desligado ou transferido da organização?",
-    "type": "radio",
+    "type": "yes-no",
     "vrf": 1,
     "alternatives": [
       {

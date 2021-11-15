@@ -3,7 +3,14 @@ import IAlternative from '../types/IAlternative'
 import IQuestion, { IFuncTable } from '../types/IQuestion'
 import { addMonths, differenceInDays, differenceInMonths } from 'date-fns'
 
-const evaluateYN = (
+const evaluateYNLow = (
+  question: IQuestion,
+  alternatives: IAlternative[]
+): number => {
+  const resp = alternatives[0]
+  return resp.value == 1 || resp.value == true ? 0 : 3
+}
+const evaluateYNModerate = (
   question: IQuestion,
   alternatives: IAlternative[]
 ): number => {
@@ -36,8 +43,12 @@ const cip4funcs: IFuncTable = [
     func: evaluateLastGoodPracticesUpdate,
   },
   {
-    keys: [1, 2],
-    func: evaluateYN,
+    keys: [1],
+    func: evaluateYNLow,
+  },
+  {
+    keys: [2],
+    func: evaluateYNModerate,
   },
 ]
 
