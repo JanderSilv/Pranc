@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
 
 import type {} from '@mui/lab/themeAugmentation'
 declare module '@mui/material/styles' {
@@ -37,4 +37,4 @@ const theme = createTheme({
   },
 })
 
-export default responsiveFontSizes(theme)
+export default theme
