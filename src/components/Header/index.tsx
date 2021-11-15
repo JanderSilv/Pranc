@@ -1,5 +1,5 @@
 import React from 'react'
-import { EletricPoleIcon } from 'public/assets/icons'
+import { ElectricPoleIcon } from 'public/assets/icons'
 import { Header } from './styles'
 import { Typography } from '@mui/material'
 
@@ -9,7 +9,7 @@ const HeaderComponent = () => {
       <Typography variant="h1" component="span">
         PRANC
       </Typography>
-      <EletricPoleIcon />
+      <ElectricPoleIcon />
     </Header>
   )
 }

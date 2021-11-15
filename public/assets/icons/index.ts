@@ -1,1 +1,1 @@
-export { default as EletricPoleIcon } from './eletric-pole.svg'
+export { default as ElectricPoleIcon } from './electric-pole.svg'
