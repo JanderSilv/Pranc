@@ -19,6 +19,7 @@ const CIPS = () => {
     cip,
     currentCIPIndex,
     storedQuestions,
+    isLastCIP,
     addQuestionsToStore,
     addScore,
     nextCIP,
@@ -99,12 +100,7 @@ const CIPS = () => {
           </ul>
 
           <ButtonsContainer>
-            <Button
-              variant="outlined"
-              onClick={() => {
-                currentCIPIndex !== 0 ? lastCIP() : null
-              }}
-            >
+            <Button variant="outlined" onClick={lastCIP}>
               Voltar
             </Button>
             <Button
@@ -118,7 +114,7 @@ const CIPS = () => {
               }}
               disabled={!cip?.questions || !checkIsAnswered()}
             >
-              Avançar
+              {!isLastCIP ? 'Avançar' : 'Finalizar'}
             </Button>
           </ButtonsContainer>
         </Content>

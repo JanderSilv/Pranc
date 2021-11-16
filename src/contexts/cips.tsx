@@ -1,4 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+
 import { makeCIPS, cipsLength } from 'src/cips/cips'
 import { Question, Score } from 'src/types'
 
@@ -12,6 +14,7 @@ interface CipsContextData {
   currentCIPIndex: number
   storedQuestions: Question[][]
   scores: Score[]
+  isLastCIP: boolean
   addQuestionsToStore: (questions: Question[]) => void
   addScore: (score: Score) => void
   lastCIP: () => void
@@ -19,8 +22,7 @@ interface CipsContextData {
 }
 
 const getCIP = async (index: number) => {
-  const cips = makeCIPS()
-  const cip = cips[index]
+  const cip = makeCIPS()[index]
   const response = await import(`src/cips/${cip.path}`)
   return {
     title: cip.title,
@@ -31,22 +33,29 @@ const getCIP = async (index: number) => {
 export const CipsContext = createContext({} as CipsContextData)
 
 const CipsProvider: React.FC = ({ children }) => {
+  const { push } = useRouter()
   const [currentCIPIndex, setCurrentCIPIndex] = useState(0)
   const [cip, setCIP] = useState<CIP | null>(null)
   const [storedQuestions, setStoredQuestions] = useState<Question[][]>([])
   const [scores, setScores] = useState<Score[]>([])
 
-  const lastCIP = useCallback(
-    () => setCurrentCIPIndex(prevValue => (prevValue > 0 ? prevValue - 1 : 0)),
-    []
-  )
-  const nextCIP = useCallback(
-    () =>
-      setCurrentCIPIndex(prevValue =>
-        prevValue === cipsLength - 1 ? prevValue : prevValue + 1
-      ),
-    []
-  )
+  const isLastCIP = currentCIPIndex === cipsLength - 1
+
+  const lastCIP = useCallback(() => {
+    const isFirstCIP = currentCIPIndex === 0
+    if (isFirstCIP) return push('/')
+    return setCurrentCIPIndex(isFirstCIP ? 0 : currentCIPIndex - 1)
+  }, [currentCIPIndex, push])
+  const nextCIP = useCallback(() => {
+    if (isLastCIP) {
+      setStoredQuestions([])
+      return push('/relatorio')
+    }
+    return setCurrentCIPIndex(prevValue =>
+      isLastCIP ? prevValue : prevValue + 1
+    )
+  }, [isLastCIP, push])
+
   const addQuestionsToStore = useCallback(
     (questions: Question[]) =>
       setStoredQuestions(prevValue => {
@@ -81,6 +90,7 @@ const CipsProvider: React.FC = ({ children }) => {
         currentCIPIndex,
         storedQuestions,
         scores,
+        isLastCIP,
         addQuestionsToStore,
         addScore,
         lastCIP,
