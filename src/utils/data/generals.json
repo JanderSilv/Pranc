@@ -7,46 +7,29 @@
       {
         "id": 0,
         "label": "Baixo",
-        "value": 0
+        "value": false
       },
       {
         "id": 1,
         "label": "Médio",
-        "value": 1
+        "value": false
       },
       {
         "id": 2,
         "label": "Alto",
-        "value": 2
+        "value": false
       }
     ]
   },
   {
     "id": 1,
     "title": "A organização possui um Gerente CIP Senior?",
-    "type": "radio",
+    "type": "yes-no",
     "alternatives": [
       {
         "id": 0,
-        "label": "Sim",
-        "value": 1
-      },
-      {
-        "id": 1,
-        "label": "Não",
-        "value": 0
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Quando foi realizada a última auditoria?",
-    "type": "date",
-    "alternatives": [
-      {
-        "id": 0,
-        "label": "Não houve auditoria",
-        "value": 0
+        "label": "yes-no",
+        "value": null
       }
     ]
   }
