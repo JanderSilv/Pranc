@@ -1,8 +1,8 @@
-import { ApplicableSystem, QuestionType } from './enums'
+import { ApplicableSystem, QuestionType, VRF } from './enums'
 import IAlternative from './IAlternative'
 
 export interface IQuestionEvaluate {
-  (question: IQuestion, alternatives: IAlternative[]): number
+  (question: IQuestion): number
 }
 
 export type IFuncTable = {
@@ -15,6 +15,7 @@ interface IQuestion {
   title: string
   helper?: string
   type: QuestionType
+  vrf?: VRF
   applicableSystem?: ApplicableSystem
   alternatives: IAlternative[]
   solutions: string[]

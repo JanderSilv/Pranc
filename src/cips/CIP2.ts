@@ -3,18 +3,14 @@ import IQuestion, { IFuncTable } from '../types/IQuestion'
 import { addMonths, differenceInMonths } from 'date-fns'
 import { loadQuestions } from 'src/types/CIP'
 
-const evaluateYN = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
+const evaluateYN = (question: IQuestion): number => {
+  const { alternatives } = question
   const response = alternatives[0].value
   return response == 1 || response == true ? 0 : 3
 }
 
-const evaluateAssetsIdentification = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
+const evaluateAssetsIdentification = (question: IQuestion): number => {
+  const { alternatives } = question
   if (alternatives[1].value == 1) return 10
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()

@@ -1,5 +1,5 @@
-import { IAlternative } from '.'
+import { IQuestion } from '.'
 
 export interface IEvaluate {
-  evaluate: (alternatives: IAlternative[]) => number
+  evaluate: (question: IQuestion) => number
 }

@@ -1,27 +1,19 @@
-import { loadQuestions } from '../types/CIP'
-import IAlternative from '../types/IAlternative'
+import { VRF, loadQuestions } from 'src/types'
 import IQuestion, { IFuncTable } from '../types/IQuestion'
 import { addMonths, differenceInDays, differenceInMonths } from 'date-fns'
 
-const evaluateYNLow = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
+const evaluateYN = (question: IQuestion): number => {
+  const { alternatives } = question
   const resp = alternatives[0]
-  return resp.value == 1 || resp.value == true ? 0 : 3
-}
-const evaluateYNModerate = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
-  const resp = alternatives[0]
-  return resp.value == 1 || resp.value == true ? 0 : 5
+  return resp.value == 1 || resp.value == true
+    ? 0
+    : question.vrf === VRF.low
+    ? 3
+    : 5
 }
 
-const evaluateLastGoodPracticesUpdate = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
+const evaluateLastGoodPracticesUpdate = (question: IQuestion): number => {
+  const { alternatives } = question
   if (alternatives[1].value == true || alternatives[1].value == 1) return 10
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()
@@ -43,12 +35,8 @@ const cip4funcs: IFuncTable = [
     func: evaluateLastGoodPracticesUpdate,
   },
   {
-    keys: [1],
-    func: evaluateYNLow,
-  },
-  {
-    keys: [2],
-    func: evaluateYNModerate,
+    keys: [1, 2],
+    func: evaluateYN,
   },
 ]
 

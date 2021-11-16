@@ -1,20 +1,15 @@
-import IAlternative from '../types/IAlternative'
 import IQuestion, { IFuncTable } from '../types/IQuestion'
 import { addMonths, differenceInMonths, differenceInDays } from 'date-fns'
 import { loadQuestions } from 'src/types/CIP'
 
-const evaluateYN = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
+const evaluateYN = (question: IQuestion): number => {
+  const { alternatives } = question
   const response = alternatives[0].value
   return response == 1 || response == true ? 0 : 5
 }
 
-const evaluateManagerCIP = (
-  question: IQuestion,
-  alternatives: IAlternative[]
-): number => {
+const evaluateManagerCIP = (question: IQuestion): number => {
+  const { alternatives } = question
   if (alternatives[0].value == true || alternatives[1].value == 1) return 10
   const lastUpdate = new Date(alternatives[0].value)
   const now = new Date()
