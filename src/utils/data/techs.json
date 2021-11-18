@@ -1,0 +1,32 @@
+[
+  {
+    "name": "NextJs",
+    "logo": "/assets/images/techs/nextjs.png",
+    "url": "https://nextjs.org/"
+  },
+  {
+    "name": "TypeScript",
+    "logo": "/assets/images/techs/typescript.png",
+    "url": "https://www.typescriptlang.org/pt/"
+  },
+  {
+    "name": "Python",
+    "logo": "/assets/images/techs/python.png",
+    "url": "https://www.python.org/"
+  },
+  {
+    "name": "Docker",
+    "logo": "/assets/images/techs/docker.png",
+    "url": "https://www.docker.com/"
+  },
+  {
+    "name": "Nginx",
+    "logo": "/assets/images/techs/nginx.png",
+    "url": "https://www.nginx.com/"
+  },
+  {
+    "name": "Adobe XD",
+    "logo": "/assets/images/techs/adobexd.png",
+    "url": "https://www.adobe.com/br/products/xd.html"
+  }
+]

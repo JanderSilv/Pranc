@@ -1,0 +1,38 @@
+[
+  {
+    "image": "/assets/images/team/jander.png",
+    "name": "Jander Silva",
+    "jobTitle": "Desenvolvedor Front-end",
+    "linkedin": "Jander Silva",
+    "linkedinUrl": "https://www.linkedin.com/in/jander-silva-267909184/",
+    "github": "JanderSilv",
+    "githubUrl": "https://github.com/JanderSilv"
+  },
+  {
+    "image": "/assets/images/team/maira.png",
+    "name": "Maíra Matos",
+    "jobTitle": "Cientista de Dados",
+    "linkedin": "Maíra Matos Araújo",
+    "linkedinUrl": "https://www.linkedin.com/in/ma%C3%ADra-matos-ara%C3%BAjo-139b07186/",
+    "github": "maaira",
+    "githubUrl": "https://github.com/maaira"
+  },
+  {
+    "image": "/assets/images/team/ruan.png",
+    "name": "Ruan Azevedo",
+    "jobTitle": "Desenvolvedor Back-end",
+    "linkedin": "Ruan Azevedo",
+    "linkedinUrl": "https://www.linkedin.com/in/ruan-azevedo-47338814a/",
+    "github": "Ruannilton",
+    "githubUrl": "https://github.com/Ruannilton"
+  },
+  {
+    "image": "/assets/images/team/yasmin.png",
+    "name": "Yasmin Thasla",
+    "jobTitle": "Cientista de Dados",
+    "linkedin": "Yasmim Thasla",
+    "linkedinUrl": "https://www.linkedin.com/in/yasmim-thasla-58a82a12a/",
+    "github": "ythasla",
+    "githubUrl": "https://github.com/ythasla"
+  }
+]
