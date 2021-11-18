@@ -36,7 +36,9 @@ const makeChartData = (scores: Score[]) => ({
   datasets: [
     {
       label: 'Pontuação',
-      data: scores.map(score => score.totalScore),
+      data: scores.map(score =>
+        average(score.questionsScores.map(questionScore => questionScore.score))
+      ),
       backgroundColor: 'rgba(2, 85, 137, 0.2)',
       borderColor: '#025589',
       borderWidth: 1,
@@ -101,10 +103,9 @@ const QuestionUtterance = ({ index, children }: Props) => {
   const { breakpoints } = useTheme()
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
 
-  const handlePopover = (event: React.MouseEvent<HTMLElement>) => {
-    if (!anchorEl) return setAnchorEl(event.currentTarget)
-    return setAnchorEl(null)
-  }
+  const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) =>
+    setAnchorEl(event.currentTarget)
+  const handleClosePopover = () => setAnchorEl(null)
   const isPopoverOpen = !!anchorEl
 
   return (
@@ -121,9 +122,9 @@ const QuestionUtterance = ({ index, children }: Props) => {
         component="span"
         aria-owns={isPopoverOpen ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
-        onClick={handlePopover}
-        onMouseEnter={handlePopover}
-        onMouseLeave={handlePopover}
+        onClick={handleOpenPopover}
+        onMouseEnter={handleOpenPopover}
+        onMouseLeave={handleClosePopover}
         sx={{
           cursor: 'help',
           display: 'inline-flex',
@@ -143,7 +144,7 @@ const QuestionUtterance = ({ index, children }: Props) => {
           vertical: 'top',
           horizontal: 'left',
         }}
-        onClose={handlePopover}
+        onClose={handleClosePopover}
         sx={{
           maxWidth: 600,
           [breakpoints.up('md')]: {
@@ -241,7 +242,7 @@ const Report = () => {
   const chartData = makeChartData(scores)
 
   return (
-    <Layout title="Relatório">
+    <Layout title="Relatório" enableHomeLink>
       <Title>RELATÓRIO GERAL</Title>
       <ChartContainer>
         <Radar data={chartData} options={options} />
