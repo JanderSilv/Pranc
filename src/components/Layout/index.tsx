@@ -5,13 +5,15 @@ import { Container, Content, Wrap } from './styles'
 
 interface Props {
   title: string
+  enableHomeLink?: boolean
   children: React.ReactNode
 }
 
-const Layout = ({ title, children }: Props) => {
+const Layout = (props: Props) => {
+  const { title, enableHomeLink = false, children } = props
   return (
     <Wrap>
-      <Header />
+      <Header enableHomeLink={enableHomeLink} />
       <Typography variant="h2">{title}</Typography>
       <Container>
         <Content>{children}</Content>

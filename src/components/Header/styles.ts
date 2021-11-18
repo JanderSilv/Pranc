@@ -7,9 +7,10 @@ export const Header = styled('header')(({ theme: { palette, spacing } }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  '& > span': {
+  '& > span, & > a': {
     color: palette.primary.contrastText,
     fontSize: '2.5rem',
+    textDecoration: 'none',
   },
 }))
 
