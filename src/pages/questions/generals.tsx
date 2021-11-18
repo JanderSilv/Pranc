@@ -23,7 +23,7 @@ const Generals = () => {
                 <Typography variant="h3">
                   {`${index + 1}. ${general.title}`}
                 </Typography>
-                <QuestionComponent {...general} />,
+                {/* <QuestionComponent {...general} />, */}
               </li>
             ))}
           </ul>
