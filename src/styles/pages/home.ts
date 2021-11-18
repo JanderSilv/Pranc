@@ -39,7 +39,7 @@ export const Content = styled('div')(({ theme: { palette } }) => ({
   alignItems: 'center',
   justifyContent: 'center',
 
-  '& > h1': {
+  '& > h1, & > p': {
     color: palette.primary.contrastText,
   },
 }))
@@ -49,7 +49,7 @@ export const StartButton = styled(LinkButton)(
     width: '100%',
     maxWidth: '50%',
 
-    marginTop: spacing(2),
+    marginTop: spacing(4),
     padding: spacing(1, 4),
 
     color: palette.primary.contrastText,
@@ -61,3 +61,9 @@ export const StartButton = styled(LinkButton)(
     },
   })
 )
+
+export const AboutLink = styled('a')({
+  position: 'absolute',
+  top: '2rem',
+  right: '2rem',
+})
