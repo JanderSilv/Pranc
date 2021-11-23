@@ -1,6 +1,7 @@
-import { memo, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import {
   Box,
+  Button,
   Collapse,
   Grid,
   IconButton,
@@ -12,6 +13,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Tooltip,
   Typography,
   useTheme,
 } from '@mui/material'
@@ -94,13 +96,15 @@ const Title = memo(({ children }: { children: string }) => {
 })
 Title.displayName = 'Title'
 
-interface Props {
+interface RowProps extends Score {
+  shouldOpen: boolean
+}
+interface QuestionUtteranceProps {
   index: number
   children: string
 }
 
-const QuestionUtterance = ({ index, children }: Props) => {
-  const { breakpoints } = useTheme()
+const QuestionUtterance = ({ index, children }: QuestionUtteranceProps) => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
 
   const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) =>
@@ -146,11 +150,8 @@ const QuestionUtterance = ({ index, children }: Props) => {
         }}
         onClose={handleClosePopover}
         sx={{
-          maxWidth: 600,
-          [breakpoints.up('md')]: {
-            maxWidth: 800,
-            pointerEvents: 'none',
-          },
+          maxWidth: { xs: 600, md: 800, lg: 1200, xl: 'unset' },
+          pointerEvents: { md: 'none' },
         }}
         disableRestoreFocus
       >
@@ -162,9 +163,18 @@ const QuestionUtterance = ({ index, children }: Props) => {
   )
 }
 
-const Row = memo((props: Score) => {
-  const { cip, questionsScores, totalScore } = props
+const Row = memo((props: RowProps) => {
+  const { cip, description, questionsScores, totalScore, shouldOpen } = props
   const [isCollapseOpen, setIsCollapseOpen] = useState(false)
+
+  useEffect(() => {
+    const handleCollapse = () => {
+      if (shouldOpen) return setIsCollapseOpen(true)
+      return setIsCollapseOpen(false)
+    }
+
+    handleCollapse()
+  }, [shouldOpen])
 
   return (
     <>
@@ -247,6 +257,11 @@ const Report = () => {
   const { scores } = useCIP()
   const chartData = makeChartData(scores)
 
+  const [shouldOpenAll, setShouldOpenAll] = useState(false)
+
+  const handleOpenAll = () => setShouldOpenAll(true)
+  const handleCloseAll = () => setShouldOpenAll(false)
+
   return (
     <Layout title="Relatório" enableHomeLink>
       <Title>RELATÓRIO GERAL</Title>
@@ -259,7 +274,26 @@ const Report = () => {
         <Table aria-label="collapsible table">
           <TableHead>
             <TableRow>
-              <TableCell>Detalhes</TableCell>
+              <TableCell>
+                <Tooltip
+                  title={shouldOpenAll ? 'Fechar Todos' : 'Abrir Todos'}
+                  placement="top"
+                  arrow
+                >
+                  <Button
+                    aria-label="expandir todos"
+                    size="small"
+                    onClick={shouldOpenAll ? handleCloseAll : handleOpenAll}
+                  >
+                    Detalhes{' '}
+                    {shouldOpenAll ? (
+                      <KeyboardArrowUp />
+                    ) : (
+                      <KeyboardArrowDown />
+                    )}
+                  </Button>
+                </Tooltip>
+              </TableCell>
               <TableCell>CIP</TableCell>
               <TableCell align="right">Pontuação Total</TableCell>
               <TableCell align="right">Média</TableCell>
@@ -267,7 +301,7 @@ const Report = () => {
           </TableHead>
           <TableBody>
             {scores.map(score => (
-              <Row key={score.cip} {...score} />
+              <Row key={score.cip} {...score} shouldOpen={shouldOpenAll} />
             ))}
           </TableBody>
         </Table>
