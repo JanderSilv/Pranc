@@ -3,6 +3,7 @@ import Question from './Question'
 
 export interface Score {
   cip: string
+  description: string
   questionsScores: {
     id: number
     title: string
@@ -23,6 +24,7 @@ export const loadQuestions = async (
 
 export const evaluateQuestions = (
   cipName: string,
+  cipDescription: string,
   questions: Question[]
 ): Score => {
   let totalScore = 0
@@ -38,6 +40,7 @@ export const evaluateQuestions = (
   })
   return {
     cip: cipName,
+    description: cipDescription,
     questionsScores,
     totalScore,
   }

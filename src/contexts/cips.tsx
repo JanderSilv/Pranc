@@ -6,6 +6,7 @@ import { Question, Score } from 'src/types'
 
 export type CIP = {
   title: string
+  description: string
   questions: Question[]
 }
 
@@ -22,10 +23,11 @@ interface CipsContextData {
 }
 
 const getCIP = async (index: number) => {
-  const cip = makeCIPS()[index]
-  const response = await import(`src/cips/${cip.path}`)
+  const { title, description, path } = makeCIPS()[index]
+  const response = await import(`src/cips/${path}`)
   return {
-    title: cip.title,
+    title,
+    description,
     questions: (await response.default()) as Question[],
   }
 }

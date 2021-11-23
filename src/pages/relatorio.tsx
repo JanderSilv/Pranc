@@ -191,7 +191,13 @@ const Row = memo((props: Score) => {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={isCollapseOpen} timeout="auto" unmountOnExit>
             <Details>
-              <Grid container columnSpacing={{ xs: 4, sm: 2 }}>
+              <Typography variant="h4" color="primary.main">
+                DESCRIÇÃO
+              </Typography>
+              <Typography mt={1} textAlign="justify">
+                {description}
+              </Typography>
+              <Grid mt={2} container columnSpacing={{ xs: 4, sm: 2 }}>
                 <Grid item xs={5}>
                   <Typography variant="h4" color="primary.main">
                     PONTUAÇÃO POR QUESTÃO

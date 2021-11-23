@@ -108,7 +108,9 @@ const CIPS = () => {
               onClick={() => {
                 if (cip) {
                   addQuestionsToStore(questions)
-                  addScore(evaluateQuestions(cip.title, questions))
+                  addScore(
+                    evaluateQuestions(cip.title, cip.description, questions)
+                  )
                   nextCIP()
                 }
               }}
