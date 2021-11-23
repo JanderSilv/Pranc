@@ -10,7 +10,7 @@ import ptBRLocale from 'date-fns/locale/pt-BR'
 import CipsProvider from 'src/contexts/cips'
 import 'src/styles/globals.css'
 import theme from 'src/styles/theme'
-import createEmotionCache from 'src/createEmotionCache'
+import { createEmotionCache } from 'src/utils'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
