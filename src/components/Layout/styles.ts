@@ -1,18 +1,24 @@
 import { styled } from '@mui/material'
 
-export const Wrap = styled('main')(({ theme: { palette, spacing } }) => ({
-  width: '100%',
-  maxWidth: '100vw',
-  minHeight: '100vh',
-  paddingBottom: spacing(4),
-  background: palette.gradient,
+export const Wrap = styled('main')(
+  ({ theme: { breakpoints, palette, spacing } }) => ({
+    width: '100%',
+    maxWidth: '100vw',
+    minHeight: '100vh',
+    paddingBottom: spacing(4),
+    background: palette.gradient,
 
-  '& > h2': {
-    paddingInline: spacing(4),
-    fontSize: '2rem',
-    color: palette.primary.contrastText,
-  },
-}))
+    '& > h2': {
+      paddingInline: spacing(2),
+      fontSize: '2rem',
+      color: palette.primary.contrastText,
+
+      [breakpoints.up('sm')]: {
+        paddingInline: spacing(4),
+      },
+    },
+  })
+)
 
 export const Container = styled('section')(
   ({ theme: { breakpoints, spacing } }) => ({

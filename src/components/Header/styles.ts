@@ -1,18 +1,24 @@
 import { styled } from '@mui/material'
 import LinkButton from 'src/components/LinkButton'
 
-export const Header = styled('header')(({ theme: { palette, spacing } }) => ({
-  padding: spacing(4),
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+export const Header = styled('header')(
+  ({ theme: { breakpoints, palette, spacing } }) => ({
+    padding: spacing(2),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
 
-  '& > span, & > a': {
-    color: palette.primary.contrastText,
-    fontSize: '2.5rem',
-    textDecoration: 'none',
-  },
-}))
+    [breakpoints.up('sm')]: {
+      padding: spacing(4),
+    },
+
+    '& > span, & > a': {
+      color: palette.primary.contrastText,
+      fontSize: '2.5rem',
+      textDecoration: 'none',
+    },
+  })
+)
 
 export const Container = styled('section')({
   display: 'flex',

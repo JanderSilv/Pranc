@@ -9,8 +9,12 @@ export const Wrap = styled('main')(({ theme: { palette } }) => ({
 }))
 
 export const Container = styled('section')(
-  ({ theme: { palette, spacing } }) => ({
-    padding: spacing(2, 4),
+  ({ theme: { breakpoints, palette, spacing } }) => ({
+    padding: spacing(2),
+
+    [breakpoints.up('sm')]: {
+      paddingInline: spacing(4),
+    },
 
     '& > h2': {
       fontSize: '2rem',
