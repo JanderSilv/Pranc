@@ -1,5 +1,5 @@
 import IQuestion, { IFuncTable } from '../types/IQuestion'
-import { addMonths, differenceInMonths, differenceInDays } from 'date-fns'
+import { addDays, differenceInMonths, differenceInDays } from 'date-fns'
 import { loadQuestions } from 'src/types/CIP'
 
 const evaluateYN = (question: IQuestion): number => {
@@ -17,8 +17,8 @@ const evaluateManagerCIP = (question: IQuestion): number => {
   const diff = differenceInDays(now, lastUpdate)
 
   if (diff <= 30) return 0
-  const limit = addMonths(lastUpdate, 30)
-  const limitDiff = differenceInMonths(now, limit)
+  const limit = addDays(lastUpdate, 30)
+  const limitDiff = differenceInDays(now, limit)
 
   if (limitDiff <= 10) return 3
   if (limitDiff <= 20) return 5
