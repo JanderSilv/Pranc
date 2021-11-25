@@ -11,7 +11,7 @@ export type IFuncTable = {
 }[]
 
 interface IQuestion {
-  id: number
+  id?: number
   title: string
   helper?: string
   type: QuestionType

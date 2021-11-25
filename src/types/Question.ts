@@ -12,19 +12,25 @@ class Question implements IQuestion, IEvaluate {
   applicableSystem?: ApplicableSystem | undefined
   alternatives: IAlternative[]
   solutions: string[]
-  evaluateFunc: IQuestionEvaluate
+  evaluateFunc: IQuestionEvaluate = (question: IQuestion) => 0;
 
-  constructor(data: IQuestion, funcs: IFuncTable) {
-    this.id = data.id
+  constructor(data: IQuestion) {
+    this.id = data.id!=undefined? data.id:0;
     this.title = data.title
     this.helper = data.helper
     this.type = data.type
     this.vrf = data.vrf
     this.applicableSystem = data.applicableSystem
     this.alternatives = data.alternatives
-    this.solutions = data.solutions
-    this.evaluateFunc = funcs.find(func => func.keys.includes(this.id))!.func
+    this.solutions = data.solutions 
   }
+
+  setEvaluateFuncs = (funcs: IFuncTable) =>{
+    const myFunc = funcs.find(func => func.keys.includes(this.id))
+    if(myFunc)
+    this.evaluateFunc = myFunc.func
+  }
+
   evaluate = (question: IQuestion) => this.evaluateFunc(question)
 }
 

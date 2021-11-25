@@ -19,7 +19,17 @@ export const loadQuestions = async (
 ): Promise<Question[]> => {
   const response = await import(`src/utils/data/cip-${id}.json`)
   const rawQuestions: IQuestion[] = response.default as IQuestion[]
-  return rawQuestions.map(rq => new Question(rq, funcs))
+  const questions = rawQuestions.map(rq => new Question(rq));
+  
+  questions.forEach((question,index)=>{
+    question.id = index;
+    question.alternatives.forEach((alternative,idx)=>{
+      alternative.id = idx;
+    })
+    question.setEvaluateFuncs(funcs);
+  })
+  console.log(questions)
+  return questions;
 }
 
 export const evaluateQuestions = (

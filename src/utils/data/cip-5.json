@@ -1,42 +1,35 @@
 [
   {
-    "id": 0,
     "title": "Quando foi realizado o último reforço da documentação e implantação de boas práticas de segurança com os colaboradores?",
     "helper": "Caso não tenha sido realizado, deixe em branco",
     "type": "date",
     "vrf": 0
   },
   {
-    "id": 1,
     "title": "A organização possui documentado e implementado um programa de treinamento em ciber segurança apropriado para cada cargo, função e responsabilidade?",
     "type": "radio",
     "vrf": 0,
     "alternatives": [
       {
-        "id": 0,
         "label": "Sim",
         "value": 1
       },
       {
-        "id": 1,
         "label": "Não",
         "value": 0
       }
     ]
   },
   {
-    "id": 2,
     "title": "A organização possui documentado e implementado um planejamento para revogar o acesso físico e remoto de um colaborador desligado ou transferido da organização?",
     "type": "radio",
     "vrf": 1,
     "alternatives": [
       {
-        "id": 0,
         "label": "Sim",
         "value": 1
       },
       {
-        "id": 1,
         "label": "Não",
         "value": 0
       }
