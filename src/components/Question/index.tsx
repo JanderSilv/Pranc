@@ -93,7 +93,7 @@ const CheckBoxQuestion = (props: Props) => {
   return (
     <FormControl sx={formStyles} component="fieldset" variant="standard">
       <FormGroup>
-        {alternatives?.map(({ id, label }) => (
+        {alternatives?.map(({ id, label }) => id && (
           <FormControlLabel
             key={id}
             control={
