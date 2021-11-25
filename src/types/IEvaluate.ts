@@ -1,5 +1,5 @@
-import { IQuestion } from '.'
+import { IQuestion, QuestionScore } from '.'
 
 export interface IEvaluate {
-  evaluate: (question: IQuestion) => number
+  evaluate: (question: IQuestion) => QuestionScore
 }

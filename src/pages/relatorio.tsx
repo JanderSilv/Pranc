@@ -1,4 +1,5 @@
 import { memo, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import {
   Box,
   Button,
@@ -33,13 +34,15 @@ import { ChartContainer, Details } from 'src/styles/pages/report'
 const average = (list: number[]) =>
   list.reduce((prev, curr) => prev + curr, 0) / list.length
 
+const sum = (list: number[]) => list.reduce((prev, curr) => prev + curr, 0)
+
 const makeChartData = (scores: Score[]) => ({
   labels: scores.map(score => score.cip),
   datasets: [
     {
       label: 'Pontuação',
       data: scores.map(score =>
-        average(score.questionsScores.map(questionScore => questionScore.score))
+        average(score.questionsScores.map(questionScore => questionScore.score.score))
       ),
       backgroundColor: 'rgba(2, 85, 137, 0.2)',
       borderColor: '#025589',
@@ -189,11 +192,9 @@ const Row = memo((props: RowProps) => {
           </IconButton>
         </TableCell>
         <TableCell>{cip}</TableCell>
-        <TableCell align="right">{`${totalScore}/${
-          questionsScores.length * 10
-        }`}</TableCell>
+        <TableCell align="right">{`${totalScore}/${sum(questionsScores.map(questionScore => questionScore.score.maxScore))}`}</TableCell>
         <TableCell align="right">
-          {average(questionsScores.map(questionScore => questionScore.score))}
+          {average(questionsScores.map(questionScore => questionScore.score.score))}
         </TableCell>
       </TableRow>
 
@@ -228,13 +229,13 @@ const Row = memo((props: RowProps) => {
                   sx={{ marginTop: 2 }}
                 >
                   <Grid item xs={5}>
-                    <Typography>{score} pontos</Typography>
+                    <Typography>{score.score} pontos</Typography>
                     <QuestionUtterance index={index}>{title}</QuestionUtterance>
                   </Grid>
                   <Grid item xs={7}>
                     <Box>
                       {solutions.map(solution => {
-                        if (score === 0)
+                        if (score.score === 0)
                           return 'Aprovado. Não necessita de correções.'
                         return (
                           <Typography key={solution}>{solution}</Typography>
@@ -254,10 +255,18 @@ const Row = memo((props: RowProps) => {
 Row.displayName = 'Row'
 
 const Report = () => {
+  const { replace } = useRouter()
   const { scores } = useCIP()
   const chartData = makeChartData(scores)
 
   const [shouldOpenAll, setShouldOpenAll] = useState(false)
+
+  useEffect(() => {
+    const checkScores = () => {
+      if (scores.length === 0) return replace('/')
+    }
+    checkScores()
+  }, [])
 
   const handleOpenAll = () => setShouldOpenAll(true)
   const handleCloseAll = () => setShouldOpenAll(false)

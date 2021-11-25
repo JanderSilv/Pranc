@@ -1,8 +1,9 @@
+import { QuestionScore } from '.'
 import { ApplicableSystem, QuestionType, VRF } from './enums'
 import IAlternative from './IAlternative'
 
 export interface IQuestionEvaluate {
-  (question: IQuestion): number
+  (question: IQuestion): QuestionScore
 }
 
 export type IFuncTable = {

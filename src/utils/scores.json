@@ -6,7 +6,10 @@
       {
         "id": 0,
         "title": "Quando foi realizada a última revisão de identificação dos ativos?",
-        "score": 10,
+        "score": {
+          "score": 0,
+          "maxScore": 1
+        },
         "solutions": [
           "A revisão dos ativos deve ser realizada a cada 15 meses."
         ]
@@ -14,7 +17,10 @@
       {
         "id": 1,
         "title": "A organização possui todos os ativos de alto, médio e baixo impacto da rede elétrica mapeados?",
-        "score": 3,
+        "score": {
+          "score": 0,
+          "maxScore": 5
+        },
         "solutions": [
           "Importante que todos os ativos sejam mapeados, a fim de implementar politicas de segurança e mitigar riscos."
         ]
@@ -29,7 +35,10 @@
       {
         "id": 0,
         "title": "A organização tem documentado e implementado políticas de cibersegurança para os cyber ativos?",
-        "score": 5,
+        "score": {
+          "score": 0,
+          "maxScore": 10
+        },
         "solutions": [
           "Cada um dos ativos deve ser documentado com politicas que indiquem medidas de proteção a esses ativos."
         ]
@@ -37,7 +46,10 @@
       {
         "id": 2,
         "title": "Última vez que o Gerente CIP foi atualizado das mudanças realizadas na organização?",
-        "score": 3,
+        "score": {
+          "score": 0,
+          "maxScore": 10
+        },
         "solutions": [
           "O gerente precisa estar ciente para realizar a aprovação e devida documentação das mudanças planejadas ou realizadas na planta."
         ]
@@ -52,7 +64,10 @@
       {
         "id": 0,
         "title": "Quando foi realizado o último reforço da documentação e implantação de boas práticas de segurança com os colaboradores?",
-        "score": 10,
+        "score": {
+          "score": 10,
+          "maxScore": 10
+        },
         "solutions": [
           "A reforço e implantação das boas práticas de segurança deve ser realizada a cada 3 meses."
         ]
@@ -60,7 +75,10 @@
       {
         "id": 1,
         "title": "A organização possui documentado e implementado um programa de treinamento em ciber segurança apropriado para cada cargo, função e responsabilidade?",
-        "score": 0,
+        "score": {
+          "score": 0,
+          "maxScore": 5
+        },
         "solutions": [
           "Importante que todos os colaboradores tenham conhecimentos de boas práticas de ciber segurança para se protegerem e protegerem a planta."
         ]
@@ -68,7 +86,10 @@
       {
         "id": 2,
         "title": "A organização possui documentado e implementado um planejamento para revogar o acesso físico e remoto de um colaborador desligado ou transferido da organização?",
-        "score": 5,
+        "score": {
+          "score": 5,
+          "maxScore": 10
+        },
         "solutions": [
           "Revogar em até 24 horas os acessos do colaborador após o desligamento ou transferência, garante a proteção de dados sensíveis e possíveis danos causados por atos de vingança."
         ]

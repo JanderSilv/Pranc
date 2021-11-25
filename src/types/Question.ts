@@ -2,6 +2,7 @@ import { QuestionType, ApplicableSystem, VRF } from './enums'
 import IAlternative from './IAlternative'
 import { IEvaluate } from './IEvaluate'
 import IQuestion, { IFuncTable, IQuestionEvaluate } from './IQuestion'
+import {QuestionScore} from './CIP'
 
 class Question implements IQuestion, IEvaluate {
   id: number
@@ -12,7 +13,7 @@ class Question implements IQuestion, IEvaluate {
   applicableSystem?: ApplicableSystem | undefined
   alternatives: IAlternative[]
   solutions: string[]
-  evaluateFunc: IQuestionEvaluate = (question: IQuestion) => 0;
+  evaluateFunc: IQuestionEvaluate = (question: IQuestion) => ({score:0,maxScore:0});
 
   constructor(data: IQuestion) {
     this.id = data.id!=undefined? data.id:0;

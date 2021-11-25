@@ -1,29 +1,43 @@
 import IQuestion, { IFuncTable } from '../types/IQuestion'
 import { addMonths, differenceInMonths } from 'date-fns'
-import { loadQuestions } from 'src/types/CIP'
+import { loadQuestions, QuestionScore } from 'src/types/CIP'
 
-const evaluateYN = (question: IQuestion): number => {
+const evaluateYN = (question: IQuestion): QuestionScore => {
+
   const { alternatives } = question
   const response = alternatives[0].value
-  return response == 1 || response == true ? 0 : 3
+  const score = (response == 1 || response == true) ? 0 : 3
+
+  return {
+    maxScore: 3,
+    score
+  };
 }
 
-const evaluateAssetsIdentification = (question: IQuestion): number => {
+const evaluateAssetsIdentification = (question: IQuestion): QuestionScore => {
   const { alternatives } = question
-  if (alternatives[1].value == 1) return 10
-  const lastUpdate = new Date(alternatives[0].value)
-  const now = new Date()
+  let score;
+  if (alternatives[1].value == 1) 
+    score = 10
+  else {
+    const lastUpdate = new Date(alternatives[0].value)
+    const now = new Date()
 
-  const diff = differenceInMonths(now, lastUpdate)
+    const diff = differenceInMonths(now, lastUpdate)
 
-  if (diff <= 15) return 0
-  const limit = addMonths(lastUpdate, 15)
-  const limitDiff = differenceInMonths(now, limit)
+    if (diff <= 15) score = 0
+    const limit = addMonths(lastUpdate, 15)
+    const limitDiff = differenceInMonths(now, limit)
 
-  if (limitDiff <= 1) return 3
-  if (limitDiff <= 2) return 5
-  if (limitDiff <= 3) return 7
-  return 10
+    if (limitDiff <= 1) score = 3
+    else if (limitDiff <= 2) score = 5
+    else if (limitDiff <= 3) score = 7
+    else score = 10
+  }
+  return {
+    maxScore: 10,
+    score
+  };
 }
 
 const cip2funcs: IFuncTable = [

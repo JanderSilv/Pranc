@@ -1,13 +1,18 @@
 import IQuestion, { IFuncTable } from './IQuestion'
 import Question from './Question'
 
+export interface QuestionScore {
+  score: number
+  maxScore: number
+}
+
 export interface Score {
   cip: string
   description: string
   questionsScores: {
     id: number
     title: string
-    score: number
+    score: QuestionScore
     solutions: string[]
   }[]
   totalScore: number
@@ -28,7 +33,7 @@ export const loadQuestions = async (
     })
     question.setEvaluateFuncs(funcs);
   })
-  console.log(questions)
+  
   return questions;
 }
 
@@ -39,12 +44,12 @@ export const evaluateQuestions = (
 ): Score => {
   let totalScore = 0
   const questionsScores = questions.map(question => {
-    const score = question.evaluate(question)
-    totalScore += score
+    const questionScore = question.evaluate(question)
+    totalScore += questionScore.score
     return {
       id: question.id,
       title: question.title,
-      score,
+      score: questionScore,
       solutions: question.solutions,
     }
   })
