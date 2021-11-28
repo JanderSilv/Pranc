@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Existem guias de configurações individuais ou por grupo que identifiquem itens como sistema operacional (incluindo versão), firmware, aplicações comerciais ou open-source bem como softwares customizados ou portas acessíveis via rede?", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Quando foi a última realização da documentação ou implementação de um processo para investigar e documentar mudanças não autorizadas?", 
+        "type": "date",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "date",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Qual periodicidade é realizada avaliação de vulnerabilidades em um ambiente de teste?", 
+        "type": "number",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "A cada (dias):",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Há um documento que liste as datas das avaliações e o resultado das ferramentas utilizadas para realizar as avaliações de vulnerabilidade?", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+]   

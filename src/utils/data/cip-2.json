@@ -3,7 +3,7 @@
     
     "title": "Quando foi realizada a última revisão de identificação dos ativos?",
     "type": "date",
-    "vrf": 0,
+    "vrf": 1,
     "alternatives": [
       {
         
@@ -22,7 +22,7 @@
     
     "title": "A organização possui todos os ativos de alto, médio e baixo impacto da rede elétrica mapeados?",
     "type": "yes-no",
-    "vrf": 0,
+    "vrf": 1,
     "alternatives": [
       {
         

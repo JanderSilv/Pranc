@@ -2,7 +2,7 @@
   {
     "title": "A organização tem documentado e implementado políticas de cibersegurança para os cyber ativos?",
     "type": "yes-no",
-    "vrf": 1,
+    "vrf": 2,
     "alternatives": [
       {
         "label": "yes-no",
@@ -15,7 +15,7 @@
     "subQuestion": {
       "title": "Quando foi realizada a última revisão dessas políticas",
       "type": "date",
-      "vrf": 1,
+      "vrf": 2,
       "alternatives": [
         {
           "label": "data",
@@ -34,7 +34,7 @@
   {
     "title": "Última vez que o Gerente CIP foi atualizado das mudanças realizadas na organização?",
     "type": "date",
-    "vrf": 1,
+    "vrf": 2,
     "alternatives": [
       {
         "label": "data",

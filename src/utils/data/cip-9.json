@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Existe plano(s) que identificam condições de ativação para planos de recuperação?", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe documentação de processos específicos para o backup e armazenamento de informações requeridas para a recuperação da funcionalidade do Sistema de Cibersegurança BES", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existem arquivos de log, workflow ou outros documentos confirmando que os processos de backup foram completados com sucesso e as falhas, se houver, foram tratadas?", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existem procedimentos para a preservação de dados, como a preservação de um disco corrompido ou a realização de espelhos do sistema antes do processo de recuperação", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+]

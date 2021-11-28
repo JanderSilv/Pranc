@@ -1,16 +1,16 @@
 export enum VRF {
-  low = 0,
+  none=0,
+  low,
   medium,
   high,
-  none,
 }
 
 export enum VSL {
-  lower = 0,
+  none = 0,
+  lower,
   moderate,
   high,
   severe,
-  none,
 }
 
 export enum ApplicableSystem {

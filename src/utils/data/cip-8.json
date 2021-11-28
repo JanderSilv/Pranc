@@ -1,0 +1,87 @@
+[
+    {
+        
+        "title": "Existe uma documentação para respostas a Incidentes de Cibersegurança que incluem os processos de identificar, classificar e responder incidentes de cibersegurança?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe uma documentação para respostas a Incidentes de Cibersegurança que incluem os processos de identificar, classificar e responder incidentes de cibersegurança?", 
+        "type": "radio",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "A entidade responsável desenvolveu o plano de respostas a incidentes",
+                "value": false,
+                "vsl": 0
+            },
+            {
+                "label": "A entidade responsável desenvolveu o plano de respostas a incidentes, mas o plano não inclui um ou mais processos para identificar qual incidente é um incidente reportável ou uma tentativa de comprometer um sistema identificado nos “Sistemas Aplicáveis”",
+                "value": false,
+                "vsl": 4
+            },
+            {
+                "label": "A entidade responsável desenvolveu o plano de respostas a incidentes, mas o plano não inclui um ou mais processos que provém notificações.",
+                "value": false,
+                "vsl": 3
+            },
+            {
+                "label": "A entidade responsável desenvolveu o plano de respostas a incidentes, mas o plano não inclui um ou mais processos que determinam critérios para avaliar e definir tentativas de comprometimento de um sistema identificado nos “Sistemas Aplicáveis”",
+                "value": false,
+                "vsl": 3
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe um processo ou procedimento de resposta a Incidentes de Cibersegurança que determina papéis e responsabilidades (monitoramento, documentação, comunicação, etc..) de grupos ou indivíduos?", 
+        "type": "radio",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "A entidade responsável desenvolveu o plano de respostas a incidentes",
+                "value": false,
+                "vsl": 0
+            },
+            {
+                "label": "A entidade responsável desenvolveu o plano de respostas a incidentes, mas o plano não inclui os papéis e responsabilidades dos grupos ou indivíduos",
+                "value": false,
+                "vsl": 3
+            }
+        ]
+    },
+    {
+        
+        "title": "Existe processo(s) de resposta a incidentes de segurança ou procedimento(s) que abordam o tratamento de um incidente (por exemplo, contenção, erradicação, recuperação)?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        
+        "title": "Existem documentos como logs de segurança, relatórios de policiamento, emails, respostas de formulários, análises forenses de resultados, revisões pós-incidentes relacionados a incidentes de cibersegurança reportáveis ou categorizados como tentativa de comprometer sistemas identificados como Sistemas Aplicáveis?", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+
+]
