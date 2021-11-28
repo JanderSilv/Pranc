@@ -1,5 +1,5 @@
-import React, { memo } from 'react'
-import { Avatar, Grid, Typography, useTheme } from '@mui/material'
+import { memo } from 'react'
+import { Avatar, Box, Link, Typography, useTheme } from '@mui/material'
 import { GitHub, LinkedIn } from '@mui/icons-material'
 
 interface Props {
@@ -13,47 +13,34 @@ interface Props {
 }
 
 const TechCard = (props: Props) => {
-  const { breakpoints, spacing, palette } = useTheme()
+  const { spacing } = useTheme()
   const { image, name, jobTitle, linkedin, linkedinUrl, github, githubUrl } =
     props
 
   return (
-    <Grid container alignItems="center" sx={{ marginTop: spacing(4) }}>
-      <Grid item xs={3}>
-        <Avatar
-          src={image}
-          sx={{
-            width: spacing(16),
-            height: spacing(16),
-
-            [breakpoints.down('md')]: {
-              marginRight: '1rem',
-              width: spacing(11),
-              height: spacing(11),
-            },
-          }}
-        />
-      </Grid>
-      <Grid
-        container
-        item
-        xs={9}
+    <Box minWidth={300} display="flex" alignItems="center" gap={2}>
+      <Avatar
+        src={image}
         sx={{
-          height: '100%',
-          paddingRight: '18rem',
-          justifyContent: 'space-between',
-
-          [breakpoints.down('md')]: {
-            padding: '0 0 0 1rem',
-          },
-
+          width: { xs: spacing(11), md: spacing(16) },
+          height: { xs: spacing(11), md: spacing(16) },
+        }}
+      />
+      <Box
+        height="100%"
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+        gap={1}
+        sx={{
           '& > a': {
+            height: '100%',
             color: 'inherit',
             textDecoration: 'none',
             transition: 'all .2s',
 
             '&:hover': {
-              color: palette.primary.dark,
+              color: 'primary.dark',
               textDecoration: 'underline',
             },
             '& svg': {
@@ -62,46 +49,35 @@ const TechCard = (props: Props) => {
           },
         }}
       >
-        <Grid
-          item
-          xs={12}
-          component={Typography}
-          variant="h5"
-          sx={{
-            fontWeight: 600,
-          }}
-        >
-          {name}
-        </Grid>
-        <Grid item xs={12} component={Typography}>
-          {jobTitle}
-        </Grid>
+        <Box>
+          <Typography variant="h5" fontWeight={600}>
+            {name}
+          </Typography>
+          <Typography>{jobTitle}</Typography>
+        </Box>
         {!!github && (
-          <Grid
-            container
+          <Link
+            display="flex"
             alignItems="center"
-            component="a"
             href={githubUrl}
             target="_blank"
             rel="noreferrer noopener"
           >
             <GitHub />
             <Typography>{github}</Typography>
-          </Grid>
+          </Link>
         )}
-        <Grid
-          container
-          alignItems="center"
-          component="a"
+        <Link
+          display="flex"
           href={linkedinUrl}
           target="_blank"
           rel="noreferrer noopener"
         >
           <LinkedIn />
           <Typography>{linkedin}</Typography>
-        </Grid>
-      </Grid>
-    </Grid>
+        </Link>
+      </Box>
+    </Box>
   )
 }
 
