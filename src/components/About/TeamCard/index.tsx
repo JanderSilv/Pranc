@@ -8,8 +8,8 @@ interface Props {
   jobTitle: string
   linkedin: string
   linkedinUrl: string
-  github: string
-  githubUrl: string
+  github?: string
+  githubUrl?: string
 }
 
 const TechCard = (props: Props) => {
@@ -76,17 +76,19 @@ const TechCard = (props: Props) => {
         <Grid item xs={12} component={Typography}>
           {jobTitle}
         </Grid>
-        <Grid
-          container
-          alignItems="center"
-          component="a"
-          href={githubUrl}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <GitHub />
-          <Typography>{github}</Typography>
-        </Grid>
+        {!!github && (
+          <Grid
+            container
+            alignItems="center"
+            component="a"
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <GitHub />
+            <Typography>{github}</Typography>
+          </Grid>
+        )}
         <Grid
           container
           alignItems="center"
