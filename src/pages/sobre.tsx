@@ -11,44 +11,22 @@ const AboutUs = () => {
     <Box bgcolor="primary.main">
       <Header enableHomeLink />
       <Box bgcolor="background.default" pb={4}>
-        <Grid
-          container
-          sx={{
-            padding: { xs: 2, md: 4 },
-          }}
-        >
+        <Grid container p={{ xs: 2, md: 4 }}>
           <Head>
             <title>Sobre nós</title>
           </Head>
 
           <Grid container>
-            <Grid
-              container
-              component={Typography}
+            <Typography
               variant="h1"
-              sx={{
-                fontSize: { xs: '1.2rem', md: '2rem' },
-                fontWeight: 600,
-                flexDirection: 'row',
-                alignItems: 'center',
-
-                '& > span': {
-                  marginLeft: spacing(1),
-                  fontSize: { xs: '1.2rem', md: '2rem' },
-                  fontWeight: 500,
-                },
-              }}
+              fontSize={{ xs: '1.2rem', md: '2rem' }}
+              fontWeight={600}
             >
-              Sobre <span>Nós</span>
-            </Grid>
+              Sobre Nós
+            </Typography>
           </Grid>
 
-          <Grid
-            container
-            sx={{
-              marginTop: 2,
-            }}
-          >
+          <Grid container mt={2}>
             <Grid container item xs={12} md={6}>
               <Grid
                 container
@@ -84,14 +62,10 @@ const AboutUs = () => {
               </Grid>
             </Grid>
             <Grid
-              container
               item
               md={6}
+              display={{ xs: 'none', md: 'flex' }}
               justifyContent="center"
-              sx={{
-                display: { xs: 'none', md: 'flex' },
-                justifyContent: 'center',
-              }}
             >
               <Image
                 src="/assets/images/about/team.png"
@@ -105,66 +79,60 @@ const AboutUs = () => {
             </Grid>
           </Grid>
 
-          <Grid
-            container
-            sx={{
-              marginTop: 4,
-            }}
-          >
-            <Grid
-              container
-              component={Typography}
+          <Grid container mt={4}>
+            <Typography
               variant="h2"
-              sx={{
-                fontSize: { xs: '1.2rem', md: '2rem' },
-                fontWeight: 600,
-                flexDirection: 'row',
-                alignItems: 'center',
-
-                '& > span': {
-                  marginLeft: spacing(1),
-                  fontSize: { xs: '1.2rem', md: '2rem' },
-                  fontWeight: 500,
-                },
-              }}
+              fontSize={{ xs: '1.2rem', md: '2rem' }}
+              fontWeight={600}
             >
-              Tecnologias <span>Utilizadas</span>
-            </Grid>
+              Tecnologias Utilizadas
+            </Typography>
 
-            <Grid
-              container
-              spacing={1}
-              sx={{
-                marginTop: 2,
-              }}
-            >
+            <Grid container spacing={1} mt={2}>
               {techs.map(tech => (
-                <Grid key={tech.name} container item xs={3} md>
+                <Grid
+                  key={tech.name}
+                  item
+                  xs={3}
+                  md
+                  display="flex"
+                  justifyContent="center"
+                >
                   <TechCard {...tech} />
                 </Grid>
               ))}
             </Grid>
           </Grid>
 
-          <Grid
-            container
-            sx={{
-              marginTop: 8,
-
-              '& > h2': {
-                fontSize: { xs: '1.2rem', md: '2rem' },
-                fontWeight: 600,
-              },
-            }}
-          >
-            <Typography variant="h2">Equipe</Typography>
-            <Grid container>
-              {team.map(dev => (
-                <Grid key={dev.name} container item xs={12} md={6}>
-                  <TeamCard {...dev} />
-                </Grid>
-              ))}
-            </Grid>
+          <Grid container mt={8}>
+            <Typography
+              variant="h2"
+              fontSize={{ xs: '1.2rem', md: '2rem' }}
+              fontWeight={600}
+            >
+              Equipe
+            </Typography>
+            <Box mt={4} p={{ xs: spacing(2), sm: 'unset' }}>
+              <Grid
+                container
+                rowSpacing={{ xs: 3, md: 6 }}
+                columnSpacing={{ xs: 0, md: 3 }}
+              >
+                {team.map(dev => (
+                  <Grid
+                    key={dev.name}
+                    item
+                    xs={12}
+                    sm
+                    lg={4}
+                    display="flex"
+                    justifyContent="center"
+                  >
+                    <TeamCard {...dev} />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </Grid>
         </Grid>
       </Box>
