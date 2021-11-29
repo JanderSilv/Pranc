@@ -89,23 +89,38 @@ const NumberQuestion = (props: Props) => {
 }
 
 const RadioQuestion = (props: Props) => {
-  const { alternatives } = props
+  const { id, alternatives, initialAlternatives, updateQuestions } = props
 
-  const [value, setValue] = useState<string | null>(null)
+  const getStoredId = () => {
+    const storedData = alternatives.find(alternative => alternative.value)
+    return storedData?.id ? storedData.id : null
+  }
+  const [value, setValue] = useState<number | null>(getStoredId())
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value)
+    setValue(Number(event.target.value))
+    if (initialAlternatives) {
+      const newAlternatives = initialAlternatives.map(alternative =>
+        alternative.id === Number(event.target.value)
+          ? { ...alternative, value: event.target.checked }
+          : alternative
+      )
+      updateQuestions(id, newAlternatives)
+    }
   }
 
   return (
     <FormControl sx={formStyles} component="fieldset">
       <RadioGroup value={value} onChange={handleChange}>
-        {alternatives?.map(({ id, label }) => (
+        {alternatives?.map(({ id, label }, index) => (
           <FormControlLabel
-            key={id}
+            key={`radio-question-${id}`}
             value={id}
             control={<Radio />}
             label={label ?? ''}
+            sx={{
+              marginTop: index > 0 ? 2 : 0,
+            }}
           />
         ))}
       </RadioGroup>
@@ -137,17 +152,32 @@ const YesNoQuestion = (props: Props) => {
 }
 
 const CheckBoxQuestion = (props: Props) => {
-  const { alternatives } = props
+  const { alternatives, id, updateQuestions } = props
 
-  const [state, setState] = useState<Record<number, true>>({})
+  const getStoredIds = () => {
+    let storedData: Record<number, true> = {}
+    alternatives.forEach(alternative => {
+      if (!!alternative.id && alternative.value)
+        storedData = { ...storedData, [alternative.id]: true }
+    })
+    return storedData
+  }
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>, id: number) => {
+  const [state, setState] = useState<Record<number, true>>(getStoredIds())
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     let auxState = { ...state }
     event.target.checked
       ? (auxState[Number(id)] = true)
       : delete auxState[Number(id)]
-
     setState(auxState)
+
+    const newAlternatives = alternatives.map(alternative =>
+      alternative.id === Number(event.target.value)
+        ? { ...alternative, value: event.target.checked }
+        : alternative
+    )
+    updateQuestions(id, newAlternatives)
   }
 
   return (
@@ -155,11 +185,11 @@ const CheckBoxQuestion = (props: Props) => {
       <FormGroup>
         {alternatives?.map(({ id, label }) => id && (
           <FormControlLabel
-            key={id}
+            key={`checkbox-question-${id}`}
             control={
               <Checkbox
                 checked={state[id] || false}
-                onChange={event => handleChange(event, id)}
+                onChange={handleChange}
                 name={label}
               />
             }
