@@ -50,6 +50,8 @@ const CipsProvider: React.FC = ({ children }) => {
   }, [currentCIPIndex, push])
   const nextCIP = useCallback(() => {
     if (isLastCIP) {
+      setCIP(null)
+      setCurrentCIPIndex(0)
       setStoredQuestions([])
       return push('/relatorio')
     }
