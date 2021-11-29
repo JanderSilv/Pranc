@@ -28,6 +28,66 @@ const formDateStyle: SxProps = {
   justifyContent: 'center',
 }
 
+const NumberQuestion = (props: Props) => {
+  const { id, alternatives, helper, initialAlternatives, updateQuestions } =
+    props
+
+  const handleChangeNumber = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length > 15) return
+    if (initialAlternatives) {
+      let newAlternatives = [...initialAlternatives]
+      newAlternatives[0] = {
+        ...alternatives[0],
+        value: Number(event.target.value),
+      }
+      updateQuestions(id, newAlternatives)
+    }
+  }
+
+  const handleChangeCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
+    if (initialAlternatives) {
+      let newAlternatives = [...initialAlternatives]
+      newAlternatives[1] = {
+        ...alternatives[1],
+        value: event.target.checked,
+      }
+      updateQuestions(id, newAlternatives)
+    }
+  }
+
+  return (
+    <Box sx={formDateStyle}>
+      <TextField
+        label={alternatives[0].label}
+        value={alternatives[0].value}
+        onKeyPress={event => !/[0-9]/.test(event.key) && event.preventDefault()}
+        onChange={handleChangeNumber}
+        helperText={helper}
+      />
+      <FormControl sx={{ mt: 2 }} component="fieldset" variant="standard">
+        <FormGroup>
+          {alternatives?.map(({ id, label, value }) => {
+            if (id === 0) return null
+            return (
+              <FormControlLabel
+                key={`number-question-${id}`}
+                control={
+                  <Checkbox
+                    checked={value}
+                    onChange={event => handleChangeCheckbox(event)}
+                    name={label}
+                  />
+                }
+                label={label}
+              />
+            )
+          })}
+        </FormGroup>
+      </FormControl>
+    </Box>
+  )
+}
+
 const RadioQuestion = (props: Props) => {
   const { alternatives } = props
 
@@ -154,7 +214,7 @@ const DateQuestion = (props: Props) => {
             if (id === 0) return null
             return (
               <FormControlLabel
-                key={id}
+                key={`date-question-${id}`}
                 control={
                   <Checkbox
                     checked={value}
@@ -178,7 +238,7 @@ const chooseComponent = (type: QuestionType) => {
     [QuestionType.yesNo]: YesNoQuestion,
     [QuestionType.multiple]: CheckBoxQuestion,
     [QuestionType.date]: DateQuestion,
-    [QuestionType.number]: CheckBoxQuestion,
+    [QuestionType.number]: NumberQuestion,
   }
 
   return components[type]
