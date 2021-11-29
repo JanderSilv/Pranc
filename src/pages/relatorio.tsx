@@ -32,7 +32,7 @@ import { Score } from 'src/types'
 import { ChartContainer, Details } from 'src/styles/pages/report'
 
 const average = (list: number[]) =>
-  list.reduce((prev, curr) => prev + curr, 0) / list.length
+  (list.reduce((prev, curr) => prev + curr, 0) / list.length).toFixed(1)
 
 const sum = (list: number[]) => list.reduce((prev, curr) => prev + curr, 0)
 
@@ -234,7 +234,7 @@ const Row = memo((props: RowProps) => {
                   </Grid>
                   <Grid item xs={7}>
                     <Box>
-                      {solutions.map(solution => {
+                      {solutions?.map(solution => {
                         if (score.score === 0)
                           return 'Aprovado. Não necessita de correções.'
                         return (
@@ -266,7 +266,7 @@ const Report = () => {
       if (scores.length === 0) return replace('/')
     }
     checkScores()
-  }, [])
+  }, [replace, scores.length])
 
   const handleOpenAll = () => setShouldOpenAll(true)
   const handleCloseAll = () => setShouldOpenAll(false)

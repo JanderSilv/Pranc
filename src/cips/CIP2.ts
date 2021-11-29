@@ -3,22 +3,20 @@ import { addMonths, differenceInMonths } from 'date-fns'
 import { loadQuestions, QuestionScore } from 'src/types/CIP'
 
 const evaluateYN = (question: IQuestion): QuestionScore => {
-
   const { alternatives } = question
   const response = alternatives[0].value
-  const score = (response == 1 || response == true) ? 0 : 3
+  const score = response === true ? 0 : 3
 
   return {
     maxScore: 3,
-    score
-  };
+    score,
+  }
 }
 
 const evaluateAssetsIdentification = (question: IQuestion): QuestionScore => {
   const { alternatives } = question
-  let score;
-  if (alternatives[1].value == 1) 
-    score = 10
+  let score
+  if (alternatives[1].value === true) score = 10
   else {
     const lastUpdate = new Date(alternatives[0].value)
     const now = new Date()
@@ -36,8 +34,8 @@ const evaluateAssetsIdentification = (question: IQuestion): QuestionScore => {
   }
   return {
     maxScore: 10,
-    score
-  };
+    score,
+  }
 }
 
 const cip2funcs: IFuncTable = [
@@ -53,17 +51,3 @@ const cip2funcs: IFuncTable = [
 
 const cip2 = async () => await loadQuestions(2, cip2funcs)
 export default cip2
-
-// const obj = new CIP4();
-
-// //jandinho pega as questoes
-// const questions =  obj.getQuestions();
-
-// //renderiza
-// //{...}
-// //pega as resposta
-
-// obj.updateState(/* e bota aqui */questions);
-
-// //e pega as nota
-// const nota = obj.evaluate();

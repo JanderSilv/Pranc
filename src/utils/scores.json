@@ -1,15 +1,12 @@
 [
   {
     "cip": "CIP-002",
-    "description": "O objetivo fundamental do NERC CIP-002 é identificar e categorizar os sistemas cibernéticos do BES, que são definidos como um conjunto agrupado de ativos cibernéticos críticos - os ativos cibernéticos do BES. Ativos cibernéticos são ainda definidos como os dispositivos eletrônicos programáveis e os dados mantidos dentro desses mesmos dispositivos. Parte do processo de categorização envolve a classificação dos vários Sistemas Cibernéticos do BES com base no impacto de qualquer interrupção do fornecimento confiável de energia elétrica. A causa da interrupção não é o fator chave, mas sim o tempo que dura a interrupção do fornecimento; qualquer coisa com mais de 15 minutos é um problema.",
+    "description": "O objetivo fundamental do NERC CIP-002 é identificar e categorizar os sistemas cibernéticos do BES, que são definidos como um conjunto agrupado de ativos cibernéticos críticos - os ativos cibernéticos do BES. Ativos cibernéticos são ainda definidos como os dispositivos eletrônicos programáveis e os dados mantidos dentro desses mesmos dispositivos. Parte do processo de categorização envolve a classificação dos vários Sistemas Cibernéticos do BES com base no impacto de qualquer interrupção do fornecimento confiável de energia elétrica. A causa da interrupção não é o fator chave, mas sim o tempo que dura a interrupção do fornecimento; qualquer interrupção com mais de 15 minutos é um problema.",
     "questionsScores": [
       {
         "id": 0,
         "title": "Quando foi realizada a última revisão de identificação dos ativos?",
-        "score": {
-          "score": 0,
-          "maxScore": 1
-        },
+        "score": { "maxScore": 10, "score": 10 },
         "solutions": [
           "A revisão dos ativos deve ser realizada a cada 15 meses."
         ]
@@ -17,10 +14,7 @@
       {
         "id": 1,
         "title": "A organização possui todos os ativos de alto, médio e baixo impacto da rede elétrica mapeados?",
-        "score": {
-          "score": 0,
-          "maxScore": 5
-        },
+        "score": { "maxScore": 3, "score": 3 },
         "solutions": [
           "Importante que todos os ativos sejam mapeados, a fim de implementar politicas de segurança e mitigar riscos."
         ]
@@ -35,39 +29,30 @@
       {
         "id": 0,
         "title": "A organização tem documentado e implementado políticas de cibersegurança para os cyber ativos?",
-        "score": {
-          "score": 0,
-          "maxScore": 10
-        },
+        "score": { "maxScore": 5, "score": 5 },
         "solutions": [
           "Cada um dos ativos deve ser documentado com politicas que indiquem medidas de proteção a esses ativos."
         ]
       },
       {
-        "id": 2,
+        "id": 1,
         "title": "Última vez que o Gerente CIP foi atualizado das mudanças realizadas na organização?",
-        "score": {
-          "score": 0,
-          "maxScore": 10
-        },
+        "score": { "score": 0, "maxScore": 0 },
         "solutions": [
           "O gerente precisa estar ciente para realizar a aprovação e devida documentação das mudanças planejadas ou realizadas na planta."
         ]
       }
     ],
-    "totalScore": 8
+    "totalScore": 5
   },
   {
     "cip": "CIP-004",
-    "description": "Nos padrões NERC CIP, um dos aspectos mais importantes é o treinamento de funcionários e contratados. Este é o foco do NERC CIP-004-6: Pessoal e Treinamento. O objetivo aqui é reduzir a exposição do BES a riscos cibernéticos de pessoal e contratados com acesso físico direto ou acesso cibernético permitido por meio de triagem e treinamento adequados desse pessoal.",
+    "description": "Nos padrões NERC CIP, um dos aspectos mais importantes é o treinamento de funcionários e contratados. Este é o foco do NERC CIP-004: Pessoal e Treinamento. O objetivo aqui é reduzir a exposição do BES a riscos cibernéticos de pessoal e contratados com acesso físico direto ou acesso cibernético permitido por meio de triagem e treinamento adequados desse pessoal.",
     "questionsScores": [
       {
         "id": 0,
         "title": "Quando foi realizado o último reforço da documentação e implantação de boas práticas de segurança com os colaboradores?",
-        "score": {
-          "score": 10,
-          "maxScore": 10
-        },
+        "score": { "maxScore": 10, "score": 8 },
         "solutions": [
           "A reforço e implantação das boas práticas de segurança deve ser realizada a cada 3 meses."
         ]
@@ -75,10 +60,7 @@
       {
         "id": 1,
         "title": "A organização possui documentado e implementado um programa de treinamento em ciber segurança apropriado para cada cargo, função e responsabilidade?",
-        "score": {
-          "score": 0,
-          "maxScore": 5
-        },
+        "score": { "maxScore": 5, "score": 3 },
         "solutions": [
           "Importante que todos os colaboradores tenham conhecimentos de boas práticas de ciber segurança para se protegerem e protegerem a planta."
         ]
@@ -86,15 +68,110 @@
       {
         "id": 2,
         "title": "A organização possui documentado e implementado um planejamento para revogar o acesso físico e remoto de um colaborador desligado ou transferido da organização?",
-        "score": {
-          "score": 5,
-          "maxScore": 10
-        },
+        "score": { "maxScore": 5, "score": 5 },
         "solutions": [
           "Revogar em até 24 horas os acessos do colaborador após o desligamento ou transferência, garante a proteção de dados sensíveis e possíveis danos causados por atos de vingança."
         ]
       }
     ],
-    "totalScore": 15
+    "totalScore": 16
+  },
+  {
+    "cip": "CIP-008",
+    "description": "",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Existe uma documentação para respostas a Incidentes de Cibersegurança que incluem os processos de identificar, classificar e responder incidentes de cibersegurança?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "Existe uma documentação para respostas a Incidentes de Cibersegurança que providenciam instruções e limiares para determinar que Incidente de Cibersegurança é reportável ou uma tentativa de comprometer um sistema identificado nos 'Sistemas Aplicáveis'?",
+        "score": { "maxScore": 6, "score": 4.5 },
+        "solutions": [""]
+      },
+      {
+        "id": 2,
+        "title": "Existe um processo ou procedimento de resposta a Incidentes de Cibersegurança que determina papéis e responsabilidades (monitoramento, documentação, comunicação, etc..) de grupos ou indivíduos?",
+        "score": { "maxScore": 6, "score": 4.5 }
+      },
+      {
+        "id": 3,
+        "title": "Existe processo(s) de resposta a incidentes de segurança ou procedimento(s) que abordam o tratamento de um incidente (por exemplo, contenção, erradicação, recuperação)?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 4,
+        "title": "Existem documentos como logs de segurança, relatórios de policiamento, emails, respostas de formulários, análises forenses de resultados, revisões pós-incidentes relacionados a incidentes de cibersegurança reportáveis ou categorizados como tentativa de comprometer sistemas identificados como Sistemas Aplicáveis?",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      }
+    ],
+    "totalScore": 30
+  },
+  {
+    "cip": "CIP-009",
+    "description": "",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Existe plano(s) que identificam condições de ativação para planos de recuperação?",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "Existe documentação de processos específicos para o backup e armazenamento de informações requeridas para a recuperação da funcionalidade do Sistema de Cibersegurança BES",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      },
+      {
+        "id": 2,
+        "title": "Existem arquivos de log, workflow ou outros documentos confirmando que os processos de backup foram completados com sucesso e as falhas, se houver, foram tratadas?",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      },
+      {
+        "id": 3,
+        "title": "Existem procedimentos para a preservação de dados, como a preservação de um disco corrompido ou a realização de espelhos do sistema antes do processo de recuperação",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      }
+    ],
+    "totalScore": 36
+  },
+  {
+    "cip": "CIP-010",
+    "description": "",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Existem guias de configurações individuais ou por grupo que identifiquem itens como sistema operacional (incluindo versão), firmware, aplicações comerciais ou open-source bem como softwares customizados ou portas acessíveis via rede?",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "Quando foi a última realização da documentação ou implementação de um processo para investigar e documentar mudanças não autorizadas?",
+        "score": { "maxScore": 10, "score": 10 },
+        "solutions": [""]
+      },
+      {
+        "id": 2,
+        "title": "Qual periodicidade é realizada avaliação de vulnerabilidades em um ambiente de teste?",
+        "score": { "maxScore": 10, "score": 10 },
+        "solutions": [""]
+      },
+      {
+        "id": 3,
+        "title": "Há um documento que liste as datas das avaliações e o resultado das ferramentas utilizadas para realizar as avaliações de vulnerabilidade?",
+        "score": { "maxScore": 9, "score": 9 },
+        "solutions": [""]
+      }
+    ],
+    "totalScore": 38
   }
 ]

@@ -1,17 +1,14 @@
 [
   {
-    
     "title": "Quando foi realizada a última revisão de identificação dos ativos?",
     "type": "date",
     "vrf": 1,
     "alternatives": [
       {
-        
         "label": "data",
         "value": null
       },
       {
-        
         "label": "Nunca foi realizado",
         "value": false
       }
@@ -19,13 +16,11 @@
     "solutions": ["A revisão dos ativos deve ser realizada a cada 15 meses."]
   },
   {
-    
     "title": "A organização possui todos os ativos de alto, médio e baixo impacto da rede elétrica mapeados?",
     "type": "yes-no",
     "vrf": 1,
     "alternatives": [
       {
-        
         "label": "yes-no",
         "value": null
       }
