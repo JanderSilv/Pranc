@@ -23,11 +23,11 @@ interface CipsContextData {
 }
 
 const getCIP = async (index: number) => {
-  const { title, description, path } = makeCIPS()[index]
+  const filteredCips = makeCIPS().filter(cip => cip.isActive)
+  const { isActive, path, ...rest } = filteredCips[index]
   const response = await import(`src/cips/${path}`)
   return {
-    title,
-    description,
+    ...rest,
     questions: (await response.default()) as Question[],
   }
 }
