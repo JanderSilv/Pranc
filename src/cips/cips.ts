@@ -22,19 +22,19 @@ export const makeCIPS = () => [
   },
   {
     title: 'CIP-008',
-    description: '',
+    description: 'A recuperação de um incidente de segurança cibernética que afetou o funcionamento confiável do BES Cyber ​​Systems requer um planejamento de recuperação.  Os requisitos do NERC CIP em apoio à fase de recuperação de um incidente de segurança cibernética são semelhantes aos do gerenciamento de incidentes - especificações, implementação e teste e revisão, atualização e comunicação.',
     path: 'CIP8',
     isActive: true,
   },
   {
     title: 'CIP-009',
-    description: '',
+    description: 'Ao trabalhar para proteger sistemas cibernéticos, é óbvio que a prevenção é a melhor, e o padrão NERC CIP 010-2 especifica os requisitos para a prevenção e detecção de quaisquer alterações não autorizadas.',
     path: 'CIP9',
     isActive: true,
   },
   {
     title: 'CIP-010',
-    description: '',
+    description: 'Esta norma NERC CIP especifica os requisitos para a identificação de tipos específicos de informações que podem, se mal utilizadas, afetar o funcionamento confiável do BES. Para evitar o acesso não autorizado ao ciber-sistema do BES é importante que o pessoal consiga identificar as informações que podem ser utilizadas de forma maliciosa; para obter acesso não autorizado ou para comprometer os Sistemas Cibernéticos do BES. ',
     path: 'CIP10',
     isActive: true,
   },
