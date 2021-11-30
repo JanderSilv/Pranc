@@ -168,8 +168,8 @@ const CheckBoxQuestion = (props: Props) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     let auxState = { ...state }
     event.target.checked
-      ? (auxState[Number(id)] = true)
-      : delete auxState[Number(id)]
+      ? (auxState[Number(event.target.value)] = true)
+      : delete auxState[Number(event.target.value)]
     setState(auxState)
 
     const newAlternatives = alternatives.map(alternative =>
@@ -183,19 +183,26 @@ const CheckBoxQuestion = (props: Props) => {
   return (
     <FormControl sx={formStyles} component="fieldset" variant="standard">
       <FormGroup>
-        {alternatives?.map(({ id, label }) => id && (
-          <FormControlLabel
-            key={`checkbox-question-${id}`}
-            control={
-              <Checkbox
-                checked={state[id] || false}
-                onChange={handleChange}
-                name={label}
+        {alternatives?.map(
+          (alternative, index) =>
+            alternative.id !== undefined && (
+              <FormControlLabel
+                key={`checkbox-question-${alternative.id}`}
+                control={
+                  <Checkbox
+                    checked={state[alternative.id] || false}
+                    value={alternative.id}
+                    onChange={handleChange}
+                    name={alternative.label}
+                  />
+                }
+                label={alternative.label}
+                sx={{
+                  marginTop: index > 0 ? 2 : 0,
+                }}
               />
-            }
-            label={label}
-          />
-        ))}
+            )
+        )}
       </FormGroup>
     </FormControl>
   )
