@@ -5,6 +5,7 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
+  FormLabel,
   Radio,
   RadioGroup,
   TextField,
@@ -152,7 +153,7 @@ const YesNoQuestion = (props: Props) => {
 }
 
 const CheckBoxQuestion = (props: Props) => {
-  const { alternatives, id, updateQuestions } = props
+  const { alternatives, id, helper, updateQuestions } = props
 
   const getStoredIds = () => {
     let storedData: Record<number, true> = {}
@@ -182,6 +183,7 @@ const CheckBoxQuestion = (props: Props) => {
 
   return (
     <FormControl sx={formStyles} component="fieldset" variant="standard">
+      {!!helper && <FormLabel component="legend">{helper}</FormLabel>}
       <FormGroup>
         {alternatives?.map(
           (alternative, index) =>

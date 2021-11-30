@@ -2,6 +2,7 @@
   {
     "title": "Sobre as documentações dos processos, em qual alternativa sua empresa se encaixa?",
     "type": "checkbox",
+    "helper": "Você pode responder com uma, mais de uma ou nenhuma opção.",
     "vrf": 1,
     "notRequired": true,
     "alternatives": [
