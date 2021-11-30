@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Existe identificação da proteção de segurança usada para mitigar os riscos representados pela divulgação não autorizada e modificação não autorizada dos dados de avaliação em tempo real e monitoramento em tempo real durante a transmissão entre centros de controle?", 
+        "type": "yes-no",
+        "vrf": 1,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe identificação de onde a Entidade Responsável aplicou proteção de segurança para transmissão de dados de Avaliação e Monitoramento em Tempo Real entre Centros de Controle?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Caso os Centros de Controle sejam detidos ou operados por Entidades Responsáveis diferentes, existe identificação das responsabilidades de cada Entidade Responsável pela aplicação da protecção de segurança à transmissão de dados de Avaliação e Monitoramento em Tempo Real entre esses Centros de Controle?", 
+        "type": "yes-no",
+        "vrf": 3,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+]

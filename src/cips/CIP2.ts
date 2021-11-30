@@ -1,6 +1,6 @@
 import IQuestion, { IFuncTable } from '../types/IQuestion'
-import { addMonths, differenceInMonths } from 'date-fns'
 import { loadQuestions, QuestionScore } from 'src/types/CIP'
+import { addMonths, differenceInMonths } from 'date-fns'
 
 const evaluateYN = (question: IQuestion): QuestionScore => {
   const { alternatives } = question

@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Existe método documentado para identificar informações do sistema cibernético do BES?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe Indicações sobre informações (por exemplo, rótulos ou classificações) que identificam as Informações do Sistema Cibernético do BES conforme designado na programa de proteção de informações?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existem materiais de treinamento que proporcionem ao pessoal conhecimento suficiente para reconhecer as Informações do Sistema Cibernético do BES?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe repositório local eletrônico ou físico designado para abrigar informações do Sistema Cibernético do BES no programa de proteção de informações da entidade?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existem procedimentos para proteção e manuseio seguro, que incluem tópicos como armazenamento, segurança durante o trânsito e uso de informações do Sistema Cibernético do BES?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe registros indicando que as Informações do Sistema Cibernético do BES são tratadas de maneira consistente com os procedimentos documentados da entidade?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+]

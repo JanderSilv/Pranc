@@ -1,0 +1,86 @@
+[
+    {
+        "title": "A Entidade Responsável desenvolveu um ou mais cadeia(s) de suprimentos documentada de risco de segurança cibernética, com plano(s) de manejo que incluem o uso de processo(s) no planejamento para aquisição de BES Cyber Sistemas para identificar e avaliar risco(s) de segurança cibernética para o BES?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "A Entidade tem processo de notificação pelo fornecedor de incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética para a Entidade Responsável?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "A Entidade tem coordenação de respostas a incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética para a Entidade Responsável?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "A Entidade tem processo de notificação por fornecedores quando o acesso remoto ou local não deve mais ser concedido a representantes de fornecedores?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "A Entidade tem processo de divulgação por fornecedores de vulnerabilidades conhecidas relacionadas aos produtos ou serviços prestados à Entidade Responsável?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "A Entidade tem processo de verificação da integridade e autenticidade do software de todos os softwares e patches fornecidos pelo fornecedor para uso no BES Cyber System?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "A Entidade tem processo de coordenação de controles para acesso remoto interativo iniciado pelo fornecedor e acesso remoto sistema a sistema com fornecedor (es)?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Foi feita uma avaliação de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão (existentes e planejadas para estar em serviço dentro de 24 meses)?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "Existe um terceiro não afiliado para verificar a avaliação de risco realizada de acordo com a pergunta anterior?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "O operador de Transmissão que tem o controle operacional do centro de controle primário foi notificado dentro de sete dias corridos após a conclusão da avaliação  de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    },
+    {
+        "title": "O operador de transmissão identificado na pergunta anterior conduziu uma avaliação de ameaças potenciais e vulnerabilidades de um ataque físico a cada uma de suas respectivas estações de transmissão, subestações de transmissão e centros de controle primários identificados na avaliação de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão?", 
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives":[
+            {
+                "label": "yes-no",
+                "value": null
+            }
+        ],
+        "solutions":[""]
+    }
+]
