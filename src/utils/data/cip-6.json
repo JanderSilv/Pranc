@@ -1,0 +1,37 @@
+[
+    {        
+        "title": "A empresa documentou ou implementou um plano de segurança contendo todas as restrições e processos, incluindo os logs?",
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["A empresa deve documentar dos os planos de segurança de maneira completa, incluindo os logs dos processos, eventos e aplicações."]
+    },{        
+        "title": "A entidade responsável não notificou cada pessoa ou grupo com uma função definida no plano de resposta de incidente de segurança cibernética sobre atualizações no plano de resposta a incidente de segurança cibernética em mais de 90, mas menos de 120 dias corridos de um teste ou incidente real?",
+        "type": "yes-no",
+        "vrf": 1,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["É necessario que sejam alertados. Se não, é uma VSL Baixa."]
+    },
+    {        
+        "title": "A empresa não implementou um ou mais documentados processo (s) para autenticação somente por senha para usuário interativo acesso, mas não aplicou técnica ou processualmente alterações de senha ou a obrigação de alterar o senha dentro de 15 meses corridos, mas menor ou igual a 16 meses corridos após a última alteração de senha?",
+        "type": "yes-no",
+        "vrf": 1,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["A senha deve ser alterada em menos de 15 meses. Se não, é uma VSL Baixa."]
+    }
+]
