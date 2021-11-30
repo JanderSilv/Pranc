@@ -1,0 +1,49 @@
+[
+    {        
+        "title": "A empresa possui documentação de todas as portas habilitadas para ativos cibernéticos?",
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["É necessario que todos os ativos cyberneticos estejam documentados. Se não, é uma VSL Moderada."]
+    },{        
+        "title": "A empresa possui lista das portas de escuta em ativos cibernéticos, individualmente ou por grupo?",
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["É necessario que todos as portas estejam documentados. Se não, é uma VSL Media."]
+    },
+    {        
+        "title": "A empresa possui arquivos de configuração de firewalls baseados em host ou outros mecanismos de nível de dispositivo que permitem apenas as portas necessárias e negam todas as outras?",
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["É necessario que todos os ativos cyberneticos estejam documentados. Se não, é uma VSL Moderada."]
+    },
+    {        
+        "title": "A empresa implementou um ou mais documentados processo (s) para autenticação somente por senha para usuário interativo acesso que não impõe técnica ou processualmente um dos dois parâmetros de senha?",
+        "type": "yes-no",
+        "vrf": 2,
+        "alternatives": [
+        {
+            "label": "yes-no",
+            "value": null
+        }
+        ],
+        "solutions": ["É necessario que todos os processos referentes a autenticação de senha sejam documentadas. Se não, é uma Alto VSL."]
+    }
+]
