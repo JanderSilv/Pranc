@@ -21,6 +21,24 @@ export const makeCIPS = () => [
     isActive: true,
   },
   {
+    title: 'CIP-005',
+    description: '',
+    path: 'CIP5',
+    isActive: true,
+  },
+  {
+    title: 'CIP-006',
+    description: '',
+    path: 'CIP6',
+    isActive: true,
+  },
+  {
+    title: 'CIP-007',
+    description: '',
+    path: 'CIP7',
+    isActive: true,
+  },
+  {
     title: 'CIP-008',
     description: 'A recuperação de um incidente de segurança cibernética que afetou o funcionamento confiável do BES Cyber ​​Systems requer um planejamento de recuperação.  Os requisitos do NERC CIP em apoio à fase de recuperação de um incidente de segurança cibernética são semelhantes aos do gerenciamento de incidentes - especificações, implementação e teste e revisão, atualização e comunicação.',
     path: 'CIP8',
