@@ -36,7 +36,8 @@ const CIPS = () => {
     ) => {
       let auxQuestionsState = {} as QuestionFormState
       cipQuestions.forEach(question => {
-        auxQuestionsState[question.id] = haveStoredData
+        auxQuestionsState[question.id] =
+          haveStoredData || !!question.notRequired
       })
       setQuestionsState(auxQuestionsState)
     }

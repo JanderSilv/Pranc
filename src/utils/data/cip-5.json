@@ -1,68 +1,66 @@
 [
-    {        
-        "title": "Sobre as documentações dos processos, em qual alternativa sua empresa se encaixa?",
-        "type":"checkbox",
-        "vrf": 1,
-        "alternatives":[
-            {               
-                "label": "Onde for tecnicamente viável, execute a autenticação ao estabelecer conectividade dial-up com Cyber Assets",                
-                "value": false,               
-                "vsl": 2
-            },
-            {               
-                "label": "Todos os ativos cibernéticos aplicáveis conectados para uma rede por meio de um protocolo roteável deve residir em um ESP definido.",                
-                "value": false,               
-                "vsl": 2
-            },
-            {               
-                "label": "Todas as conectividades externas roteáveis devem ser feitas por meio de um ponto de acesso eletrônico identificado(EAP) identificado.",                
-                "value": false,               
-                "vsl": 2
-            },
-            {               
-                "label": "Exigir permissões de acesso de entrada e saída, incluindo o motivo para conceder acesso, e negar todos os outros acessos por padrão.",                
-                "value": false,               
-                "vsl": 2
-            },
-            {
-               
-                "label": "Ter um ou mais métodos para detectar comunicações maliciosas conhecidas ou suspeitas.",                
-                "value": false,               
-                "vsl": 2
-            }
-        ],        
-        "solutions":[""]
-    },
-    {        
-        "title": "No que tange às especificações para acesso remoto, quais medidas são tomadas pela BES?",
-        "type":"radio",
-        "vrf": 2,
-        "alternatives":[
-            {
-               
-                "label": "Para todos os acessos remotos interativos, utilize um sistema intermediário que permita multi-factor authentication.",                
-                "value": false,               
-                "vsl": 2
-            },
-            {
-               
-                "label":"Todas as conexões remotas são encriptografadas de ponta a ponta.",                
-                "value": false,               
-                "vsl": 0
-            },
-            {
-               
-                "label": "Ter um ou mais métodos para determinar as sessões de acesso remoto do fornecedor ativo.",                
-                "value": false,               
-                "vsl": 2
-            },
-            {
-               
-                "label": "Ter um ou mais métodos para desativar o acesso remoto do fornecedor ativo.",                
-                "value": false,               
-                "vsl": 2
-            }
-        ],        
-        "solutions":["Todas as conexões remotas são encriptografadas, entretanto, todas as conexões criptografadas devem terminar em sistema intermediario.Logo, todas as afirmativas estão corretas com exceção da segunda alternativa."]
-    }
+  {
+    "title": "Sobre as documentações dos processos, em qual alternativa sua empresa se encaixa?",
+    "type": "checkbox",
+    "vrf": 1,
+    "notRequired": true,
+    "alternatives": [
+      {
+        "label": "Onde for tecnicamente viável, execute a autenticação ao estabelecer conectividade dial-up com Cyber Assets",
+        "value": false,
+        "vsl": 2
+      },
+      {
+        "label": "Todos os ativos cibernéticos aplicáveis conectados para uma rede por meio de um protocolo roteável deve residir em um ESP definido.",
+        "value": false,
+        "vsl": 2
+      },
+      {
+        "label": "Todas as conectividades externas roteáveis devem ser feitas por meio de um ponto de acesso eletrônico identificado(EAP) identificado.",
+        "value": false,
+        "vsl": 2
+      },
+      {
+        "label": "Exigir permissões de acesso de entrada e saída, incluindo o motivo para conceder acesso, e negar todos os outros acessos por padrão.",
+        "value": false,
+        "vsl": 2
+      },
+      {
+        "label": "Ter um ou mais métodos para detectar comunicações maliciosas conhecidas ou suspeitas.",
+        "value": false,
+        "vsl": 2
+      }
+    ],
+    "solutions": [""]
+  },
+  {
+    "title": "No que tange às especificações para acesso remoto, quais medidas são tomadas pela BES?",
+    "type": "radio",
+    "vrf": 2,
+    "alternatives": [
+      {
+        "label": "Para todos os acessos remotos interativos, utilize um sistema intermediário que permita multi-factor authentication.",
+        "value": false,
+        "vsl": 2
+      },
+      {
+        "label": "Todas as conexões remotas são encriptografadas de ponta a ponta.",
+        "value": false,
+        "vsl": 0
+      },
+      {
+        "label": "Ter um ou mais métodos para determinar as sessões de acesso remoto do fornecedor ativo.",
+        "value": false,
+        "vsl": 2
+      },
+      {
+        "label": "Ter um ou mais métodos para desativar o acesso remoto do fornecedor ativo.",
+        "value": false,
+        "vsl": 2
+      }
+    ],
+    "solutions": [
+      "Todas as conexões remotas são encriptografadas, entretanto, todas as conexões criptografadas devem terminar em sistema intermediario.Logo, todas as afirmativas estão corretas com exceção da segunda alternativa."
+    ]
+  }
 ]

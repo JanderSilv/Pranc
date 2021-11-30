@@ -17,6 +17,7 @@ interface IQuestion {
   helper?: string
   type: QuestionType
   vrf?: VRF
+  notRequired?: boolean
   applicableSystem?: ApplicableSystem
   alternatives: IAlternative[]
   solutions: string[]
