@@ -21,7 +21,7 @@ const Home = () => {
         <Content>
           <Typography variant="h1">PRANC</Typography>
           <Typography>Processo de Auditoria NERC CIP</Typography>
-          <StartButton href="/questions/cips">Iniciar</StartButton>
+          <StartButton href="/cips">Iniciar</StartButton>
         </Content>
       </Container>
     </Wrap>
