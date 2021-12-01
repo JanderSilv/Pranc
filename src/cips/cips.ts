@@ -22,19 +22,19 @@ export const makeCIPS = () => [
   },
   {
     title: 'CIP-005',
-    description: '',
+    description: 'O objetivo fundamental do NERC CIP-005 é tratar o gerenciamento do acesso eletrônico aos Cyber Systems do Bulk Electric System (BES), especificando um perímetro de segurança eletrônico controlado para apoiar a proteção dos Cyber Systems do BES contra comprometimentos que possam levar à operação incorreta ou instabilidade do BES.',
     path: 'CIP5',
     isActive: true,
   },
   {
     title: 'CIP-006',
-    description: '',
+    description: 'O objetivo fundamental do NERC CIP-006 é tratar o gerenciamento do acesso físico aos Sistemas Cibernéticos Bulk Electric System (BES) especificando um plano de segurança física para apoiar a proteção dos Sistemas Cibernéticos do BES contra comprometimentos que possam levar à operação incorreta ou instabilidade do BES.',
     path: 'CIP6',
     isActive: true,
   },
   {
     title: 'CIP-007',
-    description: '',
+    description: 'O objetivo fundamental do NERC CIP-007 é tratar o gerenciamento da segurança do sistema especificando requisitos técnicos, operacionais e procedimentais selecionados para apoiar a proteção dos sistemas cibernéticos BES contra comprometimento que poderia levar à operação incorreta ou instabilidade no sistema elétrico em massa (BES).',
     path: 'CIP7',
     isActive: true,
   },
