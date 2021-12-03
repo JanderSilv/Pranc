@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Typography } from '@mui/material'
+import { Typography, Slide } from '@mui/material'
 import { ElectricPoleIcon } from 'public/assets/icons'
 import {
   Wrap,
@@ -18,11 +18,13 @@ const Home = () => {
         </AboutLink>
       </Link>
       <Container>
-        <Content>
-          <Typography variant="h1">PRANC</Typography>
-          <Typography>Processo de Auditoria NERC CIP</Typography>
-          <StartButton href="/cips">Iniciar</StartButton>
-        </Content>
+        <Slide direction="right" timeout={{ enter: 1000 }} in mountOnEnter unmountOnExit>
+          <Content>
+            <Typography variant="h1">PRANC</Typography>
+            <Typography>Processo de Auditoria NERC CIP</Typography>
+            <StartButton href="/cips">Iniciar</StartButton>
+          </Content>
+        </Slide>
       </Container>
     </Wrap>
   )
