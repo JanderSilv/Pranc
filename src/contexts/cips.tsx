@@ -55,9 +55,8 @@ const CipsProvider: React.FC = ({ children }) => {
       setStoredQuestions([])
       return push('/relatorio')
     }
-    return setCurrentCIPIndex(prevValue =>
-      isLastCIP ? prevValue : prevValue + 1
-    )
+    setCurrentCIPIndex(prevValue => isLastCIP ? prevValue : prevValue + 1)
+    return window.scrollTo(0, 0)
   }, [isLastCIP, push])
 
   const addQuestionsToStore = useCallback(
@@ -81,8 +80,12 @@ const CipsProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     const loadCIP = async () => {
-      const cip = await getCIP(currentCIPIndex)
-      setCIP(cip)
+      try {
+        const cip = await getCIP(currentCIPIndex)
+        setCIP(cip)
+      } catch (error) {
+        console.error(error)
+      }
     }
     loadCIP()
   }, [currentCIPIndex])
