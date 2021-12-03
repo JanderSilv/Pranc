@@ -9,7 +9,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["Recomenda-se o desenvolvimento de um ou mais cadeia(s) de suprimentos documentada de risco de segurança cibernética, com plano(s) de manejo que incluem o uso de processo(s) no planejamento para aquisição de BES Cyber Sistemas para identificar e avaliar risco(s) de segurança cibernética para o BES de produtos ou serviços de fornecedores resultantes de: (i) aquisição e instalação de equipamentos e software de fornecedores; e (ii) transições de um(s) fornecedor(es) para outro(s) fornecedor(es)."]
     },
     {
         "title": "A Entidade tem processo de notificação pelo fornecedor de incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética para a Entidade Responsável?", 
@@ -21,7 +21,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade notificar o fornecedor por incidentes identificados relacionados aos produtos ou serviços fornecidos à Entidade que representam risco de segurança cibernética, para isso, sugere-se uma estrutura de governança que cada área tomadora de serviços de cada fornecedor tenha uma figura responsável pela comunicação e alinhamento de demandas com o fornecedor"]
     },
     {
         "title": "A Entidade tem coordenação de respostas a incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética para a Entidade Responsável?", 
@@ -33,7 +33,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade ter coordenação de respostas a incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética. Para isso, sugere-se uma estrutura de governança que cada área tomadora de serviços de cada fornecedor tenha uma figura responsável pela comunicação e alinhamento de demandas com o fornecedor"]
     },
     {
         "title": "A Entidade tem processo de notificação por fornecedores quando o acesso remoto ou local não deve mais ser concedido a representantes de fornecedores?", 
@@ -45,7 +45,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade ter processo de notificação aos fornecedores quando o acesso remoto ou local não deve mais ser concedido a representantes de fornecedores e, para isso, sugere-se um controle de acessos que seja responsável por liberar ou desativar o acesso de fornecedores"]
     },
     {
         "title": "A Entidade tem processo de divulgação por fornecedores de vulnerabilidades conhecidas relacionadas aos produtos ou serviços prestados à Entidade Responsável?", 
@@ -57,7 +57,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade ter processo de divulgação aos fornecedores das vulnerabilidades conhecidas relacionadas aos produtos ou serviços prestados à Entidade Responsável. Para isso, recomenda-se a utilização de ferramentas de gestão de tarefas para report de bugs e vulnerabilidades, como Trello, Gira ou outras disponíveis no mercado, em que a Entidade Responsável pode cadastrar uma demanda e sinalizar imediatamente o fornecedor como responsável pela correção"]
     },
     {
         "title": "A Entidade tem processo de verificação da integridade e autenticidade do software de todos os softwares e patches fornecidos pelo fornecedor para uso no BES Cyber System?", 
@@ -69,7 +69,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade ter processo de verificação da integridade e autenticidade do software de todos os softwares e patches fornecidos pelo fornecedor para uso no BES Cyber System. Sendo assim, sugere-se que os testes e validações em ambiente produtivo dos softwares e patches fornecidos pelo(s) fornecedor(es) sejam feitos por equipe aprovadora das áreas de negócio da Entidade Responsável"]
     },
     {
         "title": "A Entidade tem processo de coordenação de controles para acesso remoto interativo iniciado pelo fornecedor e acesso remoto sistema a sistema com fornecedor (es)?", 
@@ -81,6 +81,6 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade ter processo de notificação aos fornecedores quando o acesso remoto ou local não deve mais ser concedido a representantes de fornecedores e, para isso, sugere-se um controle de acessos que seja responsável por liberar ou desativar o acesso de fornecedores"]
     }
 ]

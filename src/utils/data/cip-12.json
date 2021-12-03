@@ -9,7 +9,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["Uma forma possível de identificação da proteção de segurança usada para mitigar os riscos representados pela divulgação não autorizada e modificação não autorizada dos dados de avaliação em tempo real e monitoramento em tempo real durante a transmissão entre centros de controle é a utilização de avisos de controle de informação e confidencialidade da informação a cada acesso em arquivos, materiais e informações transferidas entre os centros de controle"]
     },
     {
         "title": "Existe identificação de onde a Entidade Responsável aplicou proteção de segurança para transmissão de dados de Avaliação e Monitoramento em Tempo Real entre Centros de Controle?", 
@@ -21,7 +21,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["Recomenda-se o registro em um documento que armazene o histórico de identificação de onde a Entidade Responsável aplicou proteção de segurança para transmissão de dados de avaliação e monitoramento em tempo real entre centros de controle, tal documentação pode conter prints, informações e evidências do processo de identificação"]
     },
     {
         "title": "Caso os Centros de Controle sejam detidos ou operados por Entidades Responsáveis diferentes, existe identificação das responsabilidades de cada Entidade Responsável pela aplicação da protecção de segurança à transmissão de dados de Avaliação e Monitoramento em Tempo Real entre esses Centros de Controle?", 
@@ -33,6 +33,6 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É necessário a identificação das responsabilidades de cada Entidade Responsável pela aplicação da protecção de segurança à transmissão de dados de avaliação e monitoramento em tempo real entre esses centros de controle, essa identificação pode ser feita a partir de um “catálogo” de responsabilidades que descreva as funções e escopo de cada Entidade."]
     }
 ]

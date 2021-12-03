@@ -9,7 +9,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade Responsável avaliar o risco inicial e os riscos subsequentes das estações de transmissão e subestações de transmissão (existentes e planejadas para estar em serviço dentro de 24 meses). Para isso, sugere-se a criação de comissão técnica interna e competente aos assuntos do sistema cibernético BES para levantamento de riscos, pode-se utilizar estratégias como a Análise de Pontos de Função que visa classificar os riscos de acordo com seus impactos e consequências a partir de numeração adequada seguindo a sequência fibonacci"]
     },
     {
         "title": "Existe um terceiro não afiliado para verificar a avaliação de risco realizada de acordo com a pergunta anterior?", 
@@ -21,7 +21,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade Responsável avaliar o risco inicial e os riscos subsequentes das estações de transmissão e subestações de transmissão (existentes e planejadas para estar em serviço dentro de 24 meses), bem como, o processo de verificação por um terceiro não filiado ou associado a Entidade Responsável. Ou seja, para cumprimento desse requisito, é necessário a contratação de consultor terceiro e imparcial para validação sobre a análise de riscos efetuada pela Entidade Responsável"]
     },
     {
         "title": "O operador de Transmissão que tem o controle operacional do centro de controle primário foi notificado dentro de sete dias corridos após a conclusão da avaliação  de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão?", 
@@ -33,7 +33,7 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["É responsabilidade da Entidade Responsável que identificou uma estação de transmissão, subestação de transmissão ou um centro de controle primário com risco inicial e/ou riscos subsequentes, após verificação por terceiro imparcial deve comunicar cada Operador de Transmissão em um prazo de até sete dias corridos para condução de uma avaliação das ameaças potenciais e vulnerabilidades de um ataque físico a cada uma de suas respectivas estações de transmissão, subestações de transmissão e centros de controle primários identificados"]
     },
     {
         "title": "O operador de transmissão identificado na pergunta anterior conduziu uma avaliação de ameaças potenciais e vulnerabilidades de um ataque físico a cada uma de suas respectivas estações de transmissão, subestações de transmissão e centros de controle primários identificados na avaliação de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão?", 
@@ -45,6 +45,6 @@
                 "value": null
             }
         ],
-        "solutions":[""]
+        "solutions":["O operador de transmissão que for comunicado pela Entidade Responsável sobre a realização e validação de um plano de gerenciamento de riscos deve conduzir uma avaliação de ameaças potenciais e vulnerabilidades de um ataque físico a cada uma de suas respectivas estações de transmissão, subestações de transmissão e centros de controle primários identificados na avaliação de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão"]
     }
 ]
