@@ -42,7 +42,9 @@ const makeChartData = (scores: Score[]) => ({
     {
       label: 'Pontuação',
       data: scores.map(score =>
-        average(score.questionsScores.map(questionScore => questionScore.score.score))
+        average(
+          score.questionsScores.map(questionScore => questionScore.score.score)
+        )
       ),
       backgroundColor: 'rgba(2, 85, 137, 0.2)',
       borderColor: '#025589',
@@ -68,7 +70,12 @@ const options = {
   },
 }
 
-const Title = memo(({ children }: { children: string }) => {
+interface TitleProps {
+  mb?: number
+  children: string
+}
+
+const Title = memo(({ mb = 1, children }: TitleProps) => {
   const { palette, spacing, breakpoints } = useTheme()
   return (
     <Typography
@@ -76,7 +83,7 @@ const Title = memo(({ children }: { children: string }) => {
       color="primary.main"
       fontWeight="bold"
       sx={{
-        marginBottom: spacing(4),
+        marginBottom: spacing(mb),
         fontSize: '1.2rem',
         textTransform: 'uppercase',
         display: 'flex',
@@ -192,9 +199,13 @@ const Row = memo((props: RowProps) => {
           </IconButton>
         </TableCell>
         <TableCell>{cip}</TableCell>
-        <TableCell align="right">{`${totalScore}/${sum(questionsScores.map(questionScore => questionScore.score.maxScore))}`}</TableCell>
+        <TableCell align="right">{`${totalScore}/${sum(
+          questionsScores.map(questionScore => questionScore.score.maxScore)
+        )}`}</TableCell>
         <TableCell align="right">
-          {average(questionsScores.map(questionScore => questionScore.score.score))}
+          {average(
+            questionsScores.map(questionScore => questionScore.score.score)
+          )}
         </TableCell>
       </TableRow>
 
@@ -229,7 +240,9 @@ const Row = memo((props: RowProps) => {
                   sx={{ marginTop: 2 }}
                 >
                   <Grid item xs={5}>
-                    <Typography>{score.score} pontos</Typography>
+                    <Typography>
+                      {score.score}/{score.maxScore} pontos
+                    </Typography>
                     <QuestionUtterance index={index}>{title}</QuestionUtterance>
                   </Grid>
                   <Grid item xs={7}>
@@ -271,14 +284,28 @@ const Report = () => {
   const handleOpenAll = () => setShouldOpenAll(true)
   const handleCloseAll = () => setShouldOpenAll(false)
 
+  const totalScore = sum(scores.map(score => score.totalScore))
+  const totalMaxScore = sum(scores.flatMap(score => score.questionsScores.map(questionScore => questionScore.score.maxScore)))
+
   return (
     <Layout title="Relatório" enableHomeLink>
       <Title>RELATÓRIO GERAL</Title>
+      <Typography>
+        A pontuação é calculada com base em violações. Logo, quanto maior a
+        nota, mais violações foram identificadas e mais problemas necessitam ser
+        corrigidos.
+      </Typography>
+      <Typography mt={2} textAlign="center">
+        {`${totalScore}/${totalMaxScore}`} pontos
+      </Typography>
+      <Typography mt={1} textAlign="center">
+        {`${Math.round(totalScore / totalMaxScore * 100)}%`} de violações
+      </Typography>
       <ChartContainer>
         <Radar data={chartData} options={options} />
       </ChartContainer>
 
-      <Title>RELATÓRIO POR CIP</Title>
+      <Title mb={4}>RELATÓRIO POR CIP</Title>
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">
           <TableHead>

@@ -60,7 +60,7 @@
       {
         "id": 1,
         "title": "A organização possui documentado e implementado um programa de treinamento em ciber segurança apropriado para cada cargo, função e responsabilidade?",
-        "score": { "maxScore": 5, "score": 3 },
+        "score": { "maxScore": 3, "score": 0 },
         "solutions": [
           "Importante que todos os colaboradores tenham conhecimentos de boas práticas de ciber segurança para se protegerem e protegerem a planta."
         ]
@@ -74,23 +74,114 @@
         ]
       }
     ],
-    "totalScore": 16
+    "totalScore": 13
+  },
+  {
+    "cip": "CIP-005",
+    "description": "O objetivo fundamental do NERC CIP-005 é tratar o gerenciamento do acesso eletrônico aos Cyber Systems do Bulk Electric System (BES), especificando um perímetro de segurança eletrônico controlado para apoiar a proteção dos Cyber Systems do BES contra comprometimentos que possam levar à operação incorreta ou instabilidade do BES.",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Sobre as documentações dos processos, em qual alternativa sua empresa se encaixa?",
+        "score": { "maxScore": 3, "score": 3 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "No que tange às especificações para acesso remoto, quais medidas são tomadas pela BES?",
+        "score": { "maxScore": 6, "score": 3 },
+        "solutions": [
+          "Todas as conexões remotas são encriptografadas, entretanto, todas as conexões criptografadas devem terminar em sistema intermediario.Logo, todas as afirmativas estão corretas com exceção da segunda alternativa."
+        ]
+      }
+    ],
+    "totalScore": 6
+  },
+  {
+    "cip": "CIP-006",
+    "description": "O objetivo fundamental do NERC CIP-006 é tratar o gerenciamento do acesso físico aos Sistemas Cibernéticos Bulk Electric System (BES) especificando um plano de segurança física para apoiar a proteção dos Sistemas Cibernéticos do BES contra comprometimentos que possam levar à operação incorreta ou instabilidade do BES.",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "A empresa documentou ou implementou um plano de segurança contendo todas as restrições e processos, incluindo os logs?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [
+          "A empresa deve documentar dos os planos de segurança de maneira completa, incluindo os logs dos processos, eventos e aplicações."
+        ]
+      },
+      {
+        "id": 1,
+        "title": "A entidade responsável não notificou cada pessoa ou grupo com uma função definida no plano de resposta de incidente de segurança cibernética sobre atualizações no plano de resposta a incidente de segurança cibernética em mais de 90, mas menos de 120 dias corridos de um teste ou incidente real?",
+        "score": { "maxScore": 3, "score": 0 },
+        "solutions": [
+          "É necessario que sejam alertados. Se não, é uma VSL Baixa."
+        ]
+      },
+      {
+        "id": 2,
+        "title": "A empresa não implementou um ou mais documentados processo (s) para autenticação somente por senha para usuário interativo acesso, mas não aplicou técnica ou processualmente alterações de senha ou a obrigação de alterar o senha dentro de 15 meses corridos, mas menor ou igual a 16 meses corridos após a última alteração de senha?",
+        "score": { "maxScore": 3, "score": 0 },
+        "solutions": [
+          "A senha deve ser alterada em menos de 15 meses. Se não, é uma VSL Baixa."
+        ]
+      }
+    ],
+    "totalScore": 6
+  },
+  {
+    "cip": "CIP-007",
+    "description": "O objetivo fundamental do NERC CIP-007 é tratar o gerenciamento da segurança do sistema especificando requisitos técnicos, operacionais e procedimentais selecionados para apoiar a proteção dos sistemas cibernéticos BES contra comprometimento que poderia levar à operação incorreta ou instabilidade no sistema elétrico em massa (BES).",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "A empresa possui documentação de todas as portas habilitadas para ativos cibernéticos?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [
+          "É necessario que todos os ativos cyberneticos estejam documentados. Se não, é uma VSL Moderada."
+        ]
+      },
+      {
+        "id": 1,
+        "title": "A empresa possui lista das portas de escuta em ativos cibernéticos, individualmente ou por grupo?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [
+          "É necessario que todos as portas estejam documentados. Se não, é uma VSL Media."
+        ]
+      },
+      {
+        "id": 2,
+        "title": "A empresa possui arquivos de configuração de firewalls baseados em host ou outros mecanismos de nível de dispositivo que permitem apenas as portas necessárias e negam todas as outras?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [
+          "É necessario que todos os ativos cyberneticos estejam documentados. Se não, é uma VSL Moderada."
+        ]
+      },
+      {
+        "id": 3,
+        "title": "A empresa implementou um ou mais documentados processo (s) para autenticação somente por senha para usuário interativo acesso que não impõe técnica ou processualmente um dos dois parâmetros de senha?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [
+          "É necessario que todos os processos referentes a autenticação de senha sejam documentadas. Se não, é uma Alto VSL."
+        ]
+      }
+    ],
+    "totalScore": 18
   },
   {
     "cip": "CIP-008",
-    "description": "",
+    "description": "A recuperação de um incidente de segurança cibernética que afetou o funcionamento confiável do BES Cyber ​​Systems requer um planejamento de recuperação.  Os requisitos do NERC CIP em apoio à fase de recuperação de um incidente de segurança cibernética são semelhantes aos do gerenciamento de incidentes - especificações, implementação e teste e revisão, atualização e comunicação.",
     "questionsScores": [
       {
         "id": 0,
         "title": "Existe uma documentação para respostas a Incidentes de Cibersegurança que incluem os processos de identificar, classificar e responder incidentes de cibersegurança?",
-        "score": { "maxScore": 6, "score": 6 },
-        "solutions": [""]
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": []
       },
       {
         "id": 1,
         "title": "Existe uma documentação para respostas a Incidentes de Cibersegurança que providenciam instruções e limiares para determinar que Incidente de Cibersegurança é reportável ou uma tentativa de comprometer um sistema identificado nos 'Sistemas Aplicáveis'?",
         "score": { "maxScore": 6, "score": 4.5 },
-        "solutions": [""]
+        "solutions": []
       },
       {
         "id": 2,
@@ -101,77 +192,204 @@
         "id": 3,
         "title": "Existe processo(s) de resposta a incidentes de segurança ou procedimento(s) que abordam o tratamento de um incidente (por exemplo, contenção, erradicação, recuperação)?",
         "score": { "maxScore": 6, "score": 6 },
-        "solutions": [""]
+        "solutions": []
       },
       {
         "id": 4,
         "title": "Existem documentos como logs de segurança, relatórios de policiamento, emails, respostas de formulários, análises forenses de resultados, revisões pós-incidentes relacionados a incidentes de cibersegurança reportáveis ou categorizados como tentativa de comprometer sistemas identificados como Sistemas Aplicáveis?",
-        "score": { "maxScore": 9, "score": 9 },
-        "solutions": [""]
+        "score": { "maxScore": 9, "score": 0 },
+        "solutions": []
       }
     ],
-    "totalScore": 30
+    "totalScore": 15
   },
   {
     "cip": "CIP-009",
-    "description": "",
+    "description": "Ao trabalhar para proteger sistemas cibernéticos, é óbvio que a prevenção é a melhor, e o padrão NERC CIP 010-2 especifica os requisitos para a prevenção e detecção de quaisquer alterações não autorizadas.",
     "questionsScores": [
       {
         "id": 0,
         "title": "Existe plano(s) que identificam condições de ativação para planos de recuperação?",
         "score": { "maxScore": 9, "score": 9 },
-        "solutions": [""]
+        "solutions": []
       },
       {
         "id": 1,
         "title": "Existe documentação de processos específicos para o backup e armazenamento de informações requeridas para a recuperação da funcionalidade do Sistema de Cibersegurança BES",
-        "score": { "maxScore": 9, "score": 9 },
-        "solutions": [""]
+        "score": { "maxScore": 9, "score": 0 },
+        "solutions": []
       },
       {
         "id": 2,
         "title": "Existem arquivos de log, workflow ou outros documentos confirmando que os processos de backup foram completados com sucesso e as falhas, se houver, foram tratadas?",
-        "score": { "maxScore": 9, "score": 9 },
-        "solutions": [""]
+        "score": { "maxScore": 9, "score": 0 },
+        "solutions": []
       },
       {
         "id": 3,
         "title": "Existem procedimentos para a preservação de dados, como a preservação de um disco corrompido ou a realização de espelhos do sistema antes do processo de recuperação",
         "score": { "maxScore": 9, "score": 9 },
-        "solutions": [""]
+        "solutions": []
       }
     ],
-    "totalScore": 36
+    "totalScore": 18
   },
   {
     "cip": "CIP-010",
-    "description": "",
+    "description": "Esta norma NERC CIP especifica os requisitos para a identificação de tipos específicos de informações que podem, se mal utilizadas, afetar o funcionamento confiável do BES. Para evitar o acesso não autorizado ao ciber-sistema do BES é importante que o pessoal consiga identificar as informações que podem ser utilizadas de forma maliciosa; para obter acesso não autorizado ou para comprometer os Sistemas Cibernéticos do BES. ",
     "questionsScores": [
       {
         "id": 0,
         "title": "Existem guias de configurações individuais ou por grupo que identifiquem itens como sistema operacional (incluindo versão), firmware, aplicações comerciais ou open-source bem como softwares customizados ou portas acessíveis via rede?",
-        "score": { "maxScore": 9, "score": 9 },
-        "solutions": [""]
+        "score": { "maxScore": 9, "score": 0 },
+        "solutions": []
       },
       {
         "id": 1,
         "title": "Quando foi a última realização da documentação ou implementação de um processo para investigar e documentar mudanças não autorizadas?",
         "score": { "maxScore": 10, "score": 10 },
-        "solutions": [""]
+        "solutions": []
       },
       {
         "id": 2,
         "title": "Qual periodicidade é realizada avaliação de vulnerabilidades em um ambiente de teste?",
-        "score": { "maxScore": 10, "score": 10 },
-        "solutions": [""]
+        "score": { "maxScore": 10, "score": 0 },
+        "solutions": []
       },
       {
         "id": 3,
         "title": "Há um documento que liste as datas das avaliações e o resultado das ferramentas utilizadas para realizar as avaliações de vulnerabilidade?",
         "score": { "maxScore": 9, "score": 9 },
+        "solutions": []
+      }
+    ],
+    "totalScore": 19
+  },
+  {
+    "cip": "CIP-011",
+    "description": "A norma NERC CIP-011 especifica os requisitos para a identificação de tipos específicos de informações que podem, se mal utilizadas, afetar o funcionamento confiável do BES. Para evitar o acesso não autorizado ao ciber-sistema do BES é importante que o pessoal consiga identificar as informações que podem ser utilizadas de forma maliciosa; informações que possam ser utilizadas para obter acesso não autorizado ou para comprometer os Sistemas Cibernéticos do BES.",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Existe identificação da proteção de segurança usada para mitigar os riscos representados pela divulgação não autorizada e modificação não autorizada dos dados de avaliação em tempo real e monitoramento em tempo real durante a transmissão entre centros de controle?",
+        "score": { "maxScore": 3, "score": 3 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "Existe identificação de onde a Entidade Responsável aplicou proteção de segurança para transmissão de dados de Avaliação e Monitoramento em Tempo Real entre Centros de Controle?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      },
+      {
+        "id": 2,
+        "title": "Caso os Centros de Controle sejam detidos ou operados por Entidades Responsáveis diferentes, existe identificação das responsabilidades de cada Entidade Responsável pela aplicação da protecção de segurança à transmissão de dados de Avaliação e Monitoramento em Tempo Real entre esses Centros de Controle?",
+        "score": { "maxScore": 9, "score": 9 },
         "solutions": [""]
       }
     ],
-    "totalScore": 38
+    "totalScore": 12
+  },
+  {
+    "cip": "CIP-012",
+    "description": "A norma NERC CIP-012 trata sobre a comunicação entre os centros de controle existentes no sistema BES, a Entidade Responsável deve implementar, exceto sob circunstâncias excepcionais CIP, um ou mais plano(s) documentado(s) para mitigar os riscos representados pela divulgação não autorizada e modificação não autorizada da avaliação em tempo real e dados de monitoramento em tempo real enquanto são transmitidos entre quaisquer Centros de Controle aplicáveis",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Existe identificação da proteção de segurança usada para mitigar os riscos representados pela divulgação não autorizada e modificação não autorizada dos dados de avaliação em tempo real e monitoramento em tempo real durante a transmissão entre centros de controle?",
+        "score": { "maxScore": 3, "score": 0 }
+      },
+      {
+        "id": 1,
+        "title": "Existe identificação de onde a Entidade Responsável aplicou proteção de segurança para transmissão de dados de Avaliação e Monitoramento em Tempo Real entre Centros de Controle?",
+        "score": { "maxScore": 6, "score": 6 }
+      },
+      {
+        "id": 2,
+        "title": "Caso os Centros de Controle sejam detidos ou operados por Entidades Responsáveis diferentes, existe identificação das responsabilidades de cada Entidade Responsável pela aplicação da protecção de segurança à transmissão de dados de Avaliação e Monitoramento em Tempo Real entre esses Centros de Controle?",
+        "score": { "maxScore": 9, "score": 9 }
+      }
+    ],
+    "totalScore": 15
+  },
+  {
+    "cip": "CIP-013",
+    "description": "O objetivo central da norma NERC CIP-013 é avaliar a gestão da cadeia de riscos de segurança cibernética dentro dos sistemas BES no que tange ao relacionamento com fornecedores. Isso inclui processos de comunicação e controle de acessos de fornecedores; aquisição e instalação de equipamentos e software de fornecedores; transições de um(s) fornecedor(es) para outro(s) fornecedor(es). Além de processo de verificação da integridade e autenticidade do software de todos os softwares e patches fornecidos pelo(s) fornecedor(es) para uso no BES Cyber System.",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "A Entidade Responsável desenvolveu um ou mais cadeia(s) de suprimentos documentada de risco de segurança cibernética, com plano(s) de manejo que incluem o uso de processo(s) no planejamento para aquisição de BES Cyber Sistemas para identificar e avaliar risco(s) de segurança cibernética para o BES?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "A Entidade tem processo de notificação pelo fornecedor de incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética para a Entidade Responsável?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 2,
+        "title": "A Entidade tem coordenação de respostas a incidentes identificados pelo fornecedor relacionados aos produtos ou serviços fornecidos à Entidade Responsável que representam risco de segurança cibernética para a Entidade Responsável?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 3,
+        "title": "A Entidade tem processo de notificação por fornecedores quando o acesso remoto ou local não deve mais ser concedido a representantes de fornecedores?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      },
+      {
+        "id": 4,
+        "title": "A Entidade tem processo de divulgação por fornecedores de vulnerabilidades conhecidas relacionadas aos produtos ou serviços prestados à Entidade Responsável?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      },
+      {
+        "id": 5,
+        "title": "A Entidade tem processo de verificação da integridade e autenticidade do software de todos os softwares e patches fornecidos pelo fornecedor para uso no BES Cyber System?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 6,
+        "title": "A Entidade tem processo de coordenação de controles para acesso remoto interativo iniciado pelo fornecedor e acesso remoto sistema a sistema com fornecedor (es)?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      }
+    ],
+    "totalScore": 18
+  },
+  {
+    "cip": "CIP-014",
+    "description": "O foco da norma NERC CIP-014 está em avaliar o risco inicial e os riscos subsequentes das estações de transmissão e subestações de transmissão, ela determina o passo a passo dessa avaliação, bem como, processo de verificação por um terceiro não filiado ou associado a Entidade Responsável. A NERC CIP-014 também determina que cada proprietário da transmissão que identificou uma estação de transmissão, subestação de transmissão ou um centro de controle primário com risco inicial e/ou riscos subsequentes, após verificação por terceiro imparcial deve comunicar cada Operador de Transmissão em um prazo de até sete dias corridos para condução de uma avaliação das ameaças potenciais e vulnerabilidades de um ataque físico a cada uma de suas respectivas estações de transmissão, subestações de transmissão e centros de controle primários identificados.",
+    "questionsScores": [
+      {
+        "id": 0,
+        "title": "Foi feita uma avaliação de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão (existentes e planejadas para estar em serviço dentro de 24 meses)?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 1,
+        "title": "Existe um terceiro não afiliado para verificar a avaliação de risco realizada de acordo com a pergunta anterior?",
+        "score": { "maxScore": 6, "score": 6 },
+        "solutions": [""]
+      },
+      {
+        "id": 2,
+        "title": "O operador de Transmissão que tem o controle operacional do centro de controle primário foi notificado dentro de sete dias corridos após a conclusão da avaliação  de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      },
+      {
+        "id": 3,
+        "title": "O operador de transmissão identificado na pergunta anterior conduziu uma avaliação de ameaças potenciais e vulnerabilidades de um ataque físico a cada uma de suas respectivas estações de transmissão, subestações de transmissão e centros de controle primários identificados na avaliação de risco inicial e avaliações de risco subsequentes das estações de transmissão e subestações de transmissão?",
+        "score": { "maxScore": 6, "score": 0 },
+        "solutions": [""]
+      }
+    ],
+    "totalScore": 12
   }
 ]

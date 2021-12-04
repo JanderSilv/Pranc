@@ -3,7 +3,7 @@ import { styled } from '@mui/material'
 export const ChartContainer = styled('div')(({ theme: { spacing } }) => ({
   width: '100%',
   maxWidth: 450,
-  marginBottom: spacing(2),
+  marginBlock: spacing(2),
   marginInline: 'auto',
 }))
 
